@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">按钮</button>
+</body>
+
+</html>
+<script>
+    // 平常使用on+事件类型绑定事件有bug
+    /*btn.onclick=function(){
+        console.log(123)
+    }
+    btn.onclick=function(){
+        console.log(456)
+    }*/
+    // 同类型事件，只能绑定一次，因为赋值会覆盖
+
+    // 事件侦听器可以解决这个问题
+    // 语法:元素.addEventListener('不加on事件类型',事件处理函数,是否在捕获阶段执行(可选-默认false))
+    // btn.addEventListener('click', function () {
+    //     console.log(123)
+    // }, false)
+    // btn.addEventListener('click', function () {
+    //     console.log(456)
+    // }, false)
+    // 输出 123 456
+
+    // 事件侦听器有兼容问题
+    // 针对低版本处理方式: 元素.attachEvent('加on事件类型',事件函数) 没有第三个参数 - 在低版本浏览器不存在捕获
+    // btn.attachEvent('onclick', function () {
+    //     console.log(123)
+    // })
+    // btn.attachEvent('onclick', function () {
+    //     console.log(456)
+    // })
+    // 输出456 123 先绑定的后执行
+
+    // 兼容写法
+    // if (btn.addEventListener) {
+    //     btn.addEventListener('click', function () {
+    //         console.log(123)
+    //     }, false)
+    //     btn.addEventListener('click', function () {
+    //         console.log(456)
+    //     }, false)
+    // }
+    // else {
+    //     btn.attachEvent('onclick', function () {
+    //         console.log(123)
+    //     })
+    //     btn.attachEvent('onclick', function () {
+    //         console.log(456)
+    //     })
+    // }
+
+    // 兼容写法优化
+    function fn(ele,type,handler){
+        if(ele.addEventListener){
+            ele.addEventListener(type,handler)
+        }
+        else if(ele.attachEvent){
+            ele.attachEvent('on'+type,handler)
+        }
+        else{
+            ele.onclick = handler
+        }
+    }
+    fn(btn,'click',fn1)
+    function fn1(){
+        console.log(111)
+    }
+    fn(btn,'click',fn2)
+    function fn2(){
+        console.log(222)
+    }
+</script>

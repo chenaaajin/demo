@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    function eat() {
+        console.log('吃')
+    }
+
+    function Person(name, age) {
+        this.name = name
+        this.age = age
+        this.eat = eat;
+    }
+    var zs = new Person('张三', 12)
+    console.log(zs)
+    var ls = new Person('李四', 10)
+    console.log(ls)
+    console.log(zs.eat === ls.eat) // true 相同的地址指向
+
+    // 在这里再定义一个变量，和函数方法重名
+    var eat = '贼能吃'
+    console.log(eat)
+
+    // 再定义一个人
+    var zl = new Person('赵六',12)
+    console.log(zl)
+    zl.eat()  // 在此之前new改成一个变量了,函数无法调用
+    // 全局中定义的变量容易被覆盖 - 全局污染
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var a = 10;
+    function f1(){
+        function f2(){
+            console.log(a)
+        }
+        f2();
+    }
+    f1();
+    // 变量的访问规则
+    /*
+        当访问输出、拿变量运算的时候，先在当前的作用域中找，有没有定义这个变量，如果定义可以直接用，如果找不到就去上一级的作用域查找...直到找到全局，如果全局中有定义直接使用，如果全局也没有定义，会报错变量is not defined
+    */
+</script>

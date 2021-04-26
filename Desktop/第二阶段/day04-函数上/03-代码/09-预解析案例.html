@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    //第一题
+    // console.log(a) 输出underfined
+    // var a = 10;
+
+    //第二题
+    // fn()
+    // function fn(){
+    //     console.log(123) 输出123
+    // }
+    
+    //第三题
+    // console.log(fn)
+    // fn()
+    // var fn = function fn(){
+    //     console.log(123)
+    // }
+    /*
+        var fn;
+        console.log(fn) 输出underfined
+        function fn(){
+            console.log(123) 输出fn is a function
+        }
+        输出fn的时候上文定义过变量fn，但是没有赋值输出underfined，fn执行的时候，fn是underfined，不是函数
+    */
+
+    //第四题
+    // fun()
+    // var fn = function(){
+    //     console.log("我是fn函数")
+    // }
+    // function fun(){
+    //     console.log("我是fun函数")
+    // }
+    // fn()
+    // fn=100;
+    // fn()
+    /*
+        var fn;
+        function fun(){console.log("我是fun函数")}
+        fun();
+        fn = function(){console.log("我是fn函数")}
+        fn()
+        fn=100
+        fn()
+        执行后：
+            fun()前定义了fun函数，所以调用成功，输出"我是fun函数"
+            fn()前定义了fn函数，调用也是成功的，输出"我是fn函数"
+            fn=100,定义变量，赋值100，调用报错，输出:"fn is not a function"
+    */ 
+
+    // 第五题
+    // fn()
+    // function fn(){
+    //     console.log("我是fn函数")
+    // }
+    // fn();
+    // var fn = 100;
+    // fn();
+    /*  
+        function fn(){console.log("我是fn函数")}
+        var fn
+        fn() 输出"我是fn函数"
+        fn() 输出"我是fn函数"
+        fn=100
+        fn() 输出'fn is not a function'
+        注意：如果在预解析的时候，有函数和变量重名，以函数为准
+    */
+
+    //第六题
+    // var a = b;
+    // a = b = 0;
+    // console.log(a)
+    // console.log(b)
+    /*
+        var a
+        a = b; //上文没有定义过变量b，b报错：b is not defined
+        a = 0; //报错会终止程序
+        b = 0;
+        console.log(a)
+        console.log(b)
+    */
+
+    //第七题
+    // var fun = 200;
+    // fun();
+    // var fun = function(){
+    //     console.log("我是fun函数")
+    // }
+    // fun();
+    /*
+        var fun;
+        fun = 200;
+        fun(); // 不是函数调用报错 fun not is a function - 报错下面就不进行解析了
+        fun = function(){
+            console.log("我是fun函数")
+        }
+        fun()
+    */
+
+    //第八题
+    // function fn(a){
+    //     console.log('我是fn函数')
+    //     a()
+    //     function a(){
+    //         console.log('我是a函数')
+    //     }
+    // }
+    // fn(10)
+    /*
+        var a = 10;
+    */
+
+    //第九题
+    // function fn(){
+    //     console.log(num)
+    //     return 
+    //     var num = 100;
+    // }
+    // fn()
+    /*
+        function fn(){
+            var num;
+            console.log(num)
+            return
+            num = 100;
+        }
+        fn()
+    */
+
+    //第十题
+    // console.log(num);
+    // if(false){
+    //     var num = 100;
+    // }
+</script>

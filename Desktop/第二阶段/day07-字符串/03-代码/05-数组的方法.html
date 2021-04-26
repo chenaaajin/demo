@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 数组的反转
+    // 语法：数组.reverse()
+    var arr = [1,2,3]
+    arr.reverse()
+    console.log(arr)
+
+    // 数组的拼接
+    // 语法：数组.concat(要拼接的值) - 不会改变原数组，
+    var arr1 = arr.concat(4)
+    console.log(arr1)
+    // concat不会改变原数组
+    // concat可以拼接多个值
+    // concat可以将拼接的数组变成一个值，拼接在一个数组中
+
+    // 数组的截取
+    // 语法：数组.slice(开始下标,结束下标)
+    var arr2 = [1,2,3,4,5,6,7]
+    var arr3 = arr2.slice(1,4)
+    console.log(arr3)
+    // 结果需要用变量接收 - 结果包含开始的下标，不包含结束的下标
+    // slice的第一个参数不可以省略，但是第二个参数可以省略-代表开始位置截取到末尾
+    // 两个小标可以是负数
+    var res = arr2.slice(-2,-1) // 负数表示从数组末尾开始数 - 截取只能从左往右，第一个参数<第二个参数
+    console.log(res) // [6]
+
+    // 将数组拼接成字符串
+    // 语法:数组.join(连接符)
+    var arr4 = ['a','b','c']
+    var arr5 = arr4.join('-')
+    console.log(arr5)
+
+    // 数组排序 - sort
+    var arr6 = [1,4,5,6,7,3,2]
+    arr6.sort()
+    console.log(arr6)
+</script>

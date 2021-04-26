@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 163邮箱的正则表达式
+    // 邮箱的规则:6~18位,由字母、数字、下划线组成,以字母开头
+
+    // var reg = /^[[a-zA-Z]]/ // 字母开头
+    // 在正则中，点是一个特殊的符号,如果表达一个特殊的符号，就应该进行转义(特殊=>普通)
+    var reg = /^[a-zA-Z]\w{5,17}@(163|126)\.com$/
+    var email = 'chenjin@163.com'
+    var res =  reg.test(email)
+    console.log(res)
+</script>

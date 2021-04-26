@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <button id="un">解绑</button>
+</body>
+</html>
+<script>
+    btn.onclick = function(){
+        console.log(123)
+    }
+    // 代码在执行过后应该自动回收一下，代码不执行回收，会一直存在内存中，会使代码运行效率越来越低
+    // 所以需要手动进行解绑操作
+    un.onclick = function(){
+        btn.onclick = null
+    }
+
+    // 可以使用事件侦听器进行解绑
+    // btn.addEventListener('click',function(){
+    //     console.log(111)
+    // })
+    // btn.addEventListener('click',null) 这种方式不行
+    // js提供一个方法可以解绑 removeEventListener(事件类型,事件函数)
+    /*un.onclick = function(){
+        btn.removeEventListener('click',function(){
+            console.log(111) // 看似乎可以，实则不行 - 函数是复杂类型，存在堆里面比较的是地址
+        })
+    }*/
+    // 继续 使用事件侦听器进行解绑,只能解绑有名字的函数，匿名函数解绑不了
+    btn.addEventListener('click',fn)
+    un.onclick=function(){
+        btn.removeEventListener('click',fn)
+    }
+    function fn(){
+        console.log(111)
+    }
+
+    // ...
+</script>

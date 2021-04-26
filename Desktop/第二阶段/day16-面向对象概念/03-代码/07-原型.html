@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 任何函数天生自带一个属性叫做 prototype 这个属性指向对象
+    function Person(){}
+    console.log(Person)
+    // js函数是一个值，也是一个类型，还可以是一个对象
+    console.dir(Person)
+    // 任何对象天生都自带一个属性叫做 __proto__ 指向对象
+    var zs = new Person()
+    // new构造函数出来的对象的__proto__属性指向的对象
+    // 构造函数的prototype的对象
+    console.log(Person.prototype === zs.__proto__) // true
+    // 两个对象是相同的  -  原型
+
+    // 原型有什么用？
+    Person.prototype.name = "张三"
+    console.log(Person.prototype)
+    console.log(zs)
+    console.log(zs.name)
+    /*
+        任何函数天生自带属性prototype，指向一个原型对象
+        任何对象天生自带属性__proto__，指向一个原型对象
+        对象访问属性或者方法的时候，现在自己里面找，找不到就去原型上找
+    */ 
+</script>

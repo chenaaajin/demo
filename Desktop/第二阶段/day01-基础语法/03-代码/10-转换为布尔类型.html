@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  数据转布尔类型
+    //  1.数字转布尔类型    Boolean()
+    var a = 1;
+    var a1 = Boolean(a)
+    console.log(a1,typeof a1)
+    //  总结：除了0是false，其他都是true
+
+    //  2.字符串转换布尔类型
+    var b = "00213";
+    var b1 = Boolean(b);
+    console.log(b1,typeof b1);
+    //  总结：字符串转换为布尔类型，除了空字符串都是true，空字符串结果为false(有内容都是true)
+    
+    //  3.undefined转换为布尔类型
+    var c = undefined;
+    var c1 = Boolean(c)
+    console.log(c1,typeof c1)
+
+    //  4.uull转换为布尔类型
+    var d = null;
+    var d1 = Boolean(d)
+    console.log(d1,typeof d1)
+</script>

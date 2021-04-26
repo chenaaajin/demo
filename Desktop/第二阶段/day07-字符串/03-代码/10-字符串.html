@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 字符串 - 任意字符组成，由引号引起来
+    var a = "10";
+    var b = "2";
+    console.log(a>b) //false
+
+    var a1 = "aaaabb"
+    var b1 = "aaacc"
+    console.log(a1>b1) //false
+
+    var a2 = "你"
+    var b2 = "我"
+    console.log(a2>b2) // false
+
+    //字符串进行比较：有自己的比较规则 - 每个字符进行比较...
+
+    /*
+        计算机由外国人发明，一开始计算机使用的就是英文字母
+        计算机都是由电子元件组成的，电子元件只有两种状态，通电和断电，为了让计算机更好的识别数字，所以设计者将通电状态设计为1，断电状态设计为0，所以计算机内部只能识别二进制的数字：0 1组成的数字
+
+        1 2 3 4 5 6 7 8 9 10 11...
+        日常使用的数字组成  - 10个
+        没有一个数字能表示十，一旦到了十就得往前进一位 - 十进制
+
+        有一种进制，叫2进制
+        总共由2个数字组成 0 1
+        没有一个单独的数字表示2，满2就要往前进一位 
+
+        使用计算机进行数学运算的时候，数字太大计算读取结果比较麻烦，设计一个对照表 - 数字的表，字母不方便
+
+        ASCII - 阿斯克码表  - 记录了数字和字母、还有符号的对应、- 共有128个(10个数字、52个字母、符号)
+
+        计算机只能识别数字、字母、符号，不能识别各个国家的语言文字
+        重新设计了一个很大的对照表 ，包含了各个国家的语言文字 - unicode码
+        中文汉字也能进行比较，比较的是unicode的编码 - utf-8就是编码的格式(字符集)
+    */ 
+</script>

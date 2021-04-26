@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">文本</div>
+</body>
+</html>
+<script>
+    // dom元素设置样式 dom元素.style.css属性 = 属性值
+    var box = document.querySelector('.box')
+    box.style.color = 'red'
+    // box.style.font-size = '50px'
+    // box是一个对象，style、color都是下面的对象属性
+    box.style['font-size'] = '50px'
+    box.style.fontWeight = 'bold'
+</script>

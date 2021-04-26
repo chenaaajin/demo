@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // var a = 1;
+    function f1() {
+        var a = 1; //声明a在局部或者全局输出结果是一样的
+        function f2() {
+            a = 2;
+        }
+        f2();
+        console.log(a) // 2 函数的赋值规则 - a=2相当于给a重新赋值，没有写var是赋值不是定义
+    }
+    f1()
+
+     function f3() {
+        function f4() {
+            b = 2;
+        }
+        f4();
+        console.log(b) // 2 函数的赋值规则 - a=2相当于给a重新赋值，没有写var是赋值不是定义
+    }
+    f3()
+
+    /*
+        变量的赋值规则：
+            当定义一个变量的赋值时候，首先在当前作用域中找有没有定义这个变量，如果定义了直接赋值，如果没有定义就去上一级作用域中找...直到全局，如果全局定义就给全局变量赋值，如果全局中没有找到，就在全局中定义这个变量并且赋值
+    */
+
+    a = 10;// 省略var关键字定义变量
+</script>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        -   js内嵌的写法 script
+        -   页面打开的时候就直接执行了
+        -   顺序：从上至下 可以写在html页面的任意地方
+    -->
+    <script>
+    alert("我是内嵌的弹窗")
+    </script>
+
+    <!-- 
+        -   外部js的写法：script src属性引入外部的地址
+        -   顺序：内嵌>外部>行内
+     -->
+     <script src="js/01-js.js"></script>
+</head>
+<body>
+    <!-- 
+        js的行内写法
+            - 绑定在a标签上
+            - 绑定在非a标签上
+     -->
+    <a href="javascript:alert('你好世界');">点击</a>
+    <button onclick="alert('我是行内写法的弹窗')">按钮</button>
+</body>
+</html>
+    <!-- 
+        js的写法：有三种 行内、内嵌/内部、外部/外链
+        
+        建议放在body标签最下面：网页加载顺序  
+        -   js是行为
+        -   html是结构
+
+        注意点：
+        -   行内用的很少，基本不用
+        -   内嵌式和外联式不能共用一个script标签
+        -   外联的script是可以放任何位置的
+        -   外联式引入的属性是src，不是href！
+     -->

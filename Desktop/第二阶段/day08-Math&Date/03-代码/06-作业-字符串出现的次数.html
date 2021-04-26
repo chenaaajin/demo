@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+</body>
+</html>
+<script>
+    // 字符串出现的次数
+    /*
+        - 字符串中每个字符都需要进行统计 - 遍历字符串
+        - for(var i=0;i<str.length;i++){
+            str[i]  - 需要去掉重复的，每次出现一次，就需要次数增加一次
+        }
+        - 字符串去重，可以利用对象去重，因为对象的键是字符串，对象的键不会有重复的
+    */ 
+    var str = 'aaabbbccddfg'
+    // 遍历字符串，每个字符串作为对象的键
+    var obj = {}
+    for(var i=0;i<str.length;i++){
+        obj[str[i]]=0 // 获取键，可以用点或者中括号，变量只能用[]
+    }
+    for(var i=0;i<str.length;i++){
+        obj[str[i]]+=1 // 获取键，可以用点或者中括号，变量只能用[]
+    }
+    console.log(obj)
+
+    // 去重
+    // var str = ''
+    // for(var i in obj){
+    //     str = str + i
+    // }
+    // console.log(str)
+</script>

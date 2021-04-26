@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 元字符 - 代表数据中的规则
+    /*
+        \d 代表任意一个数字
+        \D 代表任意一个非数字
+        \w 代表任意一个数字、字母、下划线
+        \W 代表任意一个非数字、字母、下划线
+        .  代表任意一个字符
+        \s 代表任意一个空格
+        \S 代表任意一个非空格
+    */
+    var reg = /bc/
+    var str = 'aabbcc'
+    var res = str.replace(reg,'*')
+    console.log(res)
+</script>

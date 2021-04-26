@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //js代码运行出结果 - 其实代码在运行的过程中，经历了两个阶段，代码执行前进行了语法的解析(代码顺序的调整) - 预解析
+    /*
+        预解析在代码执行的过程中都做了些什么？
+        - 找变量和函数的定义 变量和函数的定义放在代码的最前面
+    */
+
+    // 变量的预解析
+    console.log(a)  // 会报错还是输出 undefined
+    var a = 10;
+    /* 由于js的预解析，会把变量放到代码的最前面，就相当于下面的代码
+        var a ;
+        console.log(a)
+        a = 10;
+    */
+
+    // 函数的预解析
+    fn();
+    function fn(){
+        console.log(123) // 输出123
+    }
+    /*
+        function fn(){
+            console.log(123) // 输出123
+        }
+        fn();
+    */ 
+</script>

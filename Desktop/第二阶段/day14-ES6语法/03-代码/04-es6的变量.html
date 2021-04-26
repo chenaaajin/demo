@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // var a = 10;
+    // console.log(a); //  10
+    // var a = 20;
+    // console.log(a)  //  20
+
+    // console.log(a)   //  undefined
+    // var a = 30;
+
+    // es6新增的变量声明方法 let/const
+    // let的使用
+    // 第一点，不能重复定义
+    // let a = 1;
+    // console.log(a)
+    // let a = 10;
+    // console.log(a) // 报错，不能重复定义
+    // // 第二点，没有预解析，不能提升
+    // console.log(b)
+    // let b = 1
+    // // 第三点，块级作用域
+    // for(let i=0;i<=5;i++){}
+    // console.log(i)
+    // // 第四点 不在window上
+    // var c = 1;
+    // console.log(window)
+    // let d = 1;
+    // console.log(window)
+
+    // let的使用案例
+    for(var i=0;i<=3;i++){
+        setTimeout(function(){
+            console.log(i) // 4 4 4
+        },1000);
+    }
+    /*
+        setTimeout是异步操作，异步代码永远在同步代码后面执行，所以可以分成以下步骤
+        var i = 0;
+        i = 1;
+        i = 2;
+        i = 3;
+        i = 4
+        setTimeout(function(){
+            console.log(i)
+        },1000);
+        setTimeout(function(){
+            console.log(i)
+        },1000);
+        setTimeout(function(){
+            console.log(i)
+        },1000);
+    */ 
+    // 用let声明输出123，原因是let会创建出一个块级作用域，相当于每次执行都在一个作用域内，互不影响
+    /*
+        function(i){
+            setTimeout(function(){
+                console.log(i)
+            },1000);
+        }
+    */ 
+
+    let aa = 1;
+    aa = 2
+    console.log(aa) // 2
+    // const
+    const bb = 1;
+    bb =  2
+    console.log(bb) // 不能重复赋值
+    // const定义常量(不能改变的量)，其他特点和let一样的
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // class语法：es6新语法
+    function Animal(){
+        this.eat="能吃"
+    }
+    function Dog(){
+        this.name="狗"
+    }
+
+    var rubbit = new Animal();
+
+    var erha = new Dog();
+
+    // 一个构造函数可以生出很多具体的对象
+    // 特别像 人 都是从人类开始的
+    // 张三、李四都是一个具体的对象
+    // 什么是人类 - 抽象
+
+    // 构造函数就是一个类，而对象是具体的
+    // 面向对象编程中，对象都是创建出来的，对象拿什么来创建 - 类
+    // 在编程中，是先要有类，再根据类创建对象
+    // 万物皆对象 - 数字、字符串、布尔类型 在js内部都是用对象处理的，数据也是对象
+    // 对象是 实例化 的类
+    // 实例 - 实际的一个例子 - 具体的对象 - 将一个抽象的类具体化成一个实际的例子
+    // 例：人类中的一个人张三
+    // 类是抽象的对象，张三、李四等很多人，进行抽象描述 - 人类
+    // js中的类，就是构造函数
+
+    // es6中的class就是专门用来定义类的一个语法
+    class Person{
+        // 定义对象的属性：要先在constructor方法中用this.属性名 = 值
+        constructor(name,age){
+            this.name=name
+            this.age=age
+        }
+        // 这个对象定义方法
+        eat(){
+            console.log("能吃")
+        }
+    }
+    var zhangsan = new Person("张三",18);
+    console.log(zhangsan);
+    zhangsan.eat(); // 自己身上没有，原型上是有的
+</script>

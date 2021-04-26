@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Person(){
+        this.eat="能吃";
+        this.run="能跑"
+    }
+    function Man(){
+        this.strong="力气大";
+        this.sport="擅长"
+    }
+    Man.prototype = new Person();
+    Man.prototype.constructor = Man; // 手动给新的原型添加constructor
+    var zhangSan = new Man();
+    console.log(zhangSan)
+    console.log(zhangSan.eat)
+
+    //  原型自带属性constructor，指向构造函数
+    //  但是触发原型继承后，这个原型上就不具有constructor属性了
+    //  使用原型继承的时候，需要手动添加上，让新的原型叶指向构造函数
+</script>

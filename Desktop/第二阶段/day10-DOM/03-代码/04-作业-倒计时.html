@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    距离2020年国庆还有
+    <span class="day"></span>天
+    <span class="hour"></span>时
+    <span class="minute"></span>分
+    <span class="second"></span>秒
+</body>
+
+</html>
+<script>
+    setInterval(function () {
+        // 获取国庆时间
+        var t1 = new Date('2020-10-01 00:00:00').getTime()
+        // 获取当前时间
+        var t2 = new Date().getTime()
+        // 时间差
+        var diff = t1 - t2
+        // 计算时间
+        var day = parseInt(diff / 1000 / 60 / 60 / 24) // 天
+        var hour = parseInt(diff / 1000 / 60 / 60) % 24 // 小时
+        var minute = parseInt(diff / 1000 / 60) % 60 // 分
+        var second = parseInt(diff / 1000) % 60 // 秒
+        document.querySelector('.day').innerHTML = day
+        document.querySelector('.hour').innerHTML = hour
+        document.querySelector('.minute').innerHTML = minute
+        document.querySelector('.second').innerHTML = second
+    },1000)
+
+</script>

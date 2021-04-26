@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="http://www.baidu.com">
+        <input type="text" value="请输入用户名">
+        <input type="submit">
+    </form>
+</body>
+</html>
+<script>
+    /*
+        事件三要素
+            - 事件源 绑定事件的元素
+            - 事件类型
+            - 事件处理函数
+    */
+    // 常见处理事件的方法
+    // xxx.onclick = function(){}
+    // 或者是function fn(){}  xxx.onclick = fn
+
+    // 鼠标事件
+    // 键盘事件
+    
+    // 处理表单验证的问题
+    // input.onchange = function(){
+    //     console.log(this.value)
+    // }
+
+    /*var input = document.querySelector('input')
+    input.onfocus = function(){
+        if(this.value=='请输入用户名...'){
+            this.value = ''
+            console.log(this.value)
+        }
+    }
+    input.onblur = function(){
+        if(this.value == ''){
+            this.value  = '请输入用户名...'
+            console.log(this.value)
+        }
+    }*/
+    // 表单在提交之前通常会做一些验证工作,不要给表单绑定单击事件，因为表单里面默认提交，提交后相当于跳转到新的页面
+    // 正确处理方式
+    var form = document.querySelector('form')
+    form.onsubmit = function(){
+        var input = document.querySelector('input[type=text]')
+        console.log(input)
+        if(input.value==''||input.value=='请输入用户名'){
+            console.log('用户名不能为空')
+            return false // 让函数停止运行
+        }
+        else{
+            return true
+        }
+    }
+    
+    // 键盘事件
+    // window事件
+    // load 当页面中所有资源加载完之后再执行当前事件函数
+    // resize
+    // scroll
+    // unload - 页面关闭或者刷新时候触发的事件
+    window.uonuload = function(){
+        alert('页面就要关闭了') // 低版本浏览器，用的少 - 页面关闭时候数据清除
+    }   
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  数组去重
+    var arr = [1,1,2,1,2,4,5]
+    /*
+        思路分析：
+            - 先遍历数组，判断每个数值是否有过
+            - 把每次遍历的值保存和后面的每个值进行比较
+            - 将每一个不重复的值保存到一个新的数组中
+    */ 
+    var arr1 = [arr[0]] // 第一个直接被读取到，直接保存即可
+    for(var i=1;i<arr.length;i++){ // 所以索引可以从1(第二个值)开始，不用从0开始
+        // arr[i]
+        var res = has(arr1,arr[i])
+        if(res){
+            continue;
+        }
+        else{
+            arr1.push(arr[i])
+        }
+    }
+
+    console.log(arr1)
+
+    function has(arr,item){
+        var res = false;
+        for(var i=0;i<arr.length;i++){
+            if(arr[i]===item){
+                res = true;
+                break; 
+            }
+        }
+        return res;
+    }
+</script>

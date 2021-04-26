@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 选择排序:先找最大值或者最小值，放到合适的位置，然后再找最大值或者最小值放到合适的位置
+    var arr = [4,3,2,1]
+    // for(var i=1;i<arr.length;i++){
+    //     // i=1;是拿到第2个和第一个相比
+    //     if(arr[0]>arr[i]){
+    //         var res = arr[0]
+    //         arr[0] = arr[i]
+    //         arr[i] =res;
+    //     }
+    //     // console.log(arr)
+    //     /*
+    //        最开始 4,3,2,1
+    //         3 4 2 1
+    //         2 4 3 1
+    //         1 4 3 2
+    //     */ 
+    // }
+    // for(var i=2;i<arr.length;i++){
+    //     // i=2;是拿到第3个和第2个相比
+    //     if(arr[1]>arr[i]){
+    //         var res = arr[1]
+    //         arr[1] = arr[i]
+    //         arr[i] =res;
+    //     }
+    //     // console.log(arr)
+    //     /*
+    //         最开始 1,4,3,2
+    //             1,3,4,2
+    //             1,2,4,3
+    //     */
+    // }
+    // for(var i=2;i<arr.length;i++){
+    //     // i=3;是拿到第4个和第3个相比
+    //     if(arr[2]>arr[i]){
+    //         var res = arr[2]
+    //         arr[2] = arr[i]
+    //         arr[i] =res;
+    //     }
+    //     // console.log(arr)
+    //     /*
+    //         最开始 1,2,4,3
+    //             1,2,3,4
+    //     */
+    // }
+
+    // 快速排序
+    for(var i=0;i<arr.length-1;i++){
+        for(var j=i+1;j<arr.length;j++){
+            if(arr[i]>arr[j]){
+            var res = arr[i]
+            arr[i] = arr[j]
+            arr[j] =res;
+            }
+        }
+    }
+    console.log(arr)
+    // 冒泡和快速排序的次数
+    // 4个数字 冒泡-3*3 快速-3+2+1
+    // 9个数字 冒泡-8*8 快速-8+7+6+5+4+3+2+1
+</script>

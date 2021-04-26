@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function fn(a,b){
+        var c= a + b;
+        console.log(c) // NAN
+        console.log(arguments)
+    }
+    fn(1); //只传入一个，a为1，b为undefined,1+undefined = NAN
+    fn(1,2,3) // a为1，b为2，3是没有用的参数不会报错
+    //  在js中的函数中，提供了一个关键字，接收所有传入的实参 - arguments
+
+    //  arguments的常用操作
+    //  1.得到实参的数量 - arguments.length
+    //  2.得到任何一个实参 - arguments[序号]
+
+    //  原则上：函数的形参和实参不仅是数量要对应，类型也要对应
+
+    //  总结：
+    //  形参：定义函数的时候小括号内的变量，相当于在函数内部定义了这个变量，函数内部可以直接使用这个变量了
+    //  实参：调用函数时，小括号内放入的值，相当于在给形参赋值，让函数中的代码有了实际的值进行运行
+</script>

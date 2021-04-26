@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 普通函数是直接使用函数名()进行调用
+    function fn(){
+        console.log(this)
+    }
+    // 不直接调用，将其作为对象中的方法
+    var obj = {
+        eat:fn
+    }
+    obj.eat() // 对象方法指向obj
+    fn() // 直接调用指向window
+
+
+   
+</script>

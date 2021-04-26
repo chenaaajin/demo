@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 构造函数 - 就是一个函数，可以用来创建对象的函数
+    var obj = new Object() // Object就是一个构造函数
+
+    // 什么样的函数才能被称为构造函数呢？和普通的函数有什么区别呢？
+    // 任何函数都可以用new创建对象 - 任何函数都可以是构造函数
+    function fn(){}
+    var a = new fn();
+    console.log(a) 
+    // 普通函数在什么情况下就是构造函数
+    // 使用new函数创建对象的时候就是构造函数
+
+    // 系统内置了很多的构造函数 Object Number String
+    var num = new Number(20)
+    num++ // 数字可以进行数学运算
+    console.log(num)
+
+    var str = 'aaa'
+    str += 1; // 字符串对象可以进行拼接
+    console.log(str)
+
+    // 数学对象和平常所用的数字类型的区别
+    // js内部数据是用对象来处理的，但是为了操作习惯，js做可一些处理 - 数字类型
+</script>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <input type="text" id="text">
+    <select id="num">
+        <option>选择数字</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+    </select>
+</body>
+</html>
+<script>
+    //事件:用户在页面中的行为 - 鼠标单击、双击
+    //btn - 标签的id名，在js中可以代表这个标签 - "只有id能这样写"!!!
+    //btn.onclick - 给标签绑定了一个鼠标单击事件
+    //点击这个行为做一些事情 - 通常都是函数在操作
+
+    //事件的第一种写法
+    // btn.onclick = function(){
+    //     //将函数赋值给一个标签的单击事件，表示在单击这个标签的时候就可以执行函数中的代码段
+    //     console.log("哈哈哈")
+    // }
+
+    //事件的第二种写法 - 赋值函数名称
+    // function fn(){
+    //     console.log('嘻嘻嘻')
+    // }
+    // btn.onclick = fn; // 使用函数名代表函数这段代码 - fn不能添加括号 - 添加小括号表示未点击就调用执行
+
+    /*
+        鼠标事件：
+            单击 - click
+            双击 - dbclick
+            右击 - contextmenu
+            移上 - mouseover
+            移开 - mouseout
+            移动 - mousemove
+            按下 - mousedown
+            松开 - mouseup
+    */
+    function fn(){
+        console.log('你好')
+    }
+    // btn.ondbclick = fn;
+    // btn.oncontextmenu = fn;
+    // btn.onmouseover = fn;
+    // btn.onmouseout = fn;
+    // btn.onmousemove = fn;
+    // btn.onmousedown = fn;
+    // btn.onmouseup = fn;
+
+    /*
+        键盘事件：
+            press - 键盘敲击
+            keydown - 键盘按下
+            keyup - 键盘抬起
+            windown 窗口事件 - 浏览器       
+    */ 
+    // window.onkeypress = fn;
+    // window.onkeydown = fn;
+    // window.onkeyup = fn;
+
+    /*
+        表单事件：
+            focus - 获取焦点
+            blur - 失去焦点
+            onchange -  内容改变 
+    */ 
+    text.onfocus = fn;
+    text.onblur = fn;
+    num.onchange = fn;
+</script>

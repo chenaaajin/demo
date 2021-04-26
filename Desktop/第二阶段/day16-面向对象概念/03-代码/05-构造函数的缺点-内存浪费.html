@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // function Person(name,age){
+    //     this.name = name
+    //     this.age = age
+    //     this.eat = function(){
+    //         console.log('吃')
+    //     }
+    // }
+    // var zs = new Person('张三',12)
+    // console.log(zs)
+    // var ls = new Person('李四',10)
+    // console.log(ls)
+    // // 两个对象中都有一个方法，方法一样，对象结构也是一样的
+    // console.log(zs.eat === ls.eat) // flase
+    // 函数是一个复杂类型,值是在堆中,地址是在栈中
+    // 堆：zs ls 两个空间 
+    // 栈: zs ls 指向不同的地址
+    // 两个方法的代码一模一样,但是占用了两个内存空间,对于内存来说是浪费的，性能不高，需要进行优化
+
+    // 优化方式：可以把函数的方法拿到外面定义 上面的代码进行优化
+     function eat(){
+            console.log('吃')
+        }
+    function Person(name,age){
+        this.name = name
+        this.age = age
+        this.eat = eat; /* 这里在外面定义一个 */
+    }
+    var zs = new Person('张三',12)
+    console.log(zs)
+    var ls = new Person('李四',10)
+    console.log(ls)
+    console.log(zs.eat === ls.eat) // true 相同的地址指向
+
+</script>

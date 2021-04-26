@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // for...in可以用来遍历数组
+    var arr = [1,2,3,4,5]
+    for(var i in arr){
+        // console.log(arr[i])
+        console.log(i) // for...in遍历，循环出来的是字符串
+        // 因为for...in专门用来遍历对象的 - 对象的键都是字符串
+        // 由于数组也属于对象，所以for...in可以用来遍历数组
+    }
+
+    for(var i=0;i<arr.length;i++){
+        console.log(i)
+    }
+
+    // 遍历对象，用for...in
+    // 遍历数组，用for
+</script>

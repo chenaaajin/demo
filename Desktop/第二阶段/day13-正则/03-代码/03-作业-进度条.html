@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0
+        }
+        .box{
+            width: 300px;
+            height: 30px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .small{
+            width: 0;
+            height: 30px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="small"></div><span>00</span>
+    </div>
+    
+</body>
+</html>
+<script>
+    var box = document.querySelector('.box')
+    var small = document.querySelector('.small')
+    box.onmousedown = function(){
+        box.onmousemove = function(e){
+            var e  = e || window.event
+            var x = e.clientX
+            var left = box.offsetLeft
+            var w = x - left
+            small.style.width = w + 'px'
+            // 大盒子宽度
+            var w1 = box.clientWidth;
+            var per = Math.ceil(w/w1*100)
+            console.log(per)
+            document.querySelector('span').innerText = per
+        }
+    }
+    document.onmouseup = function(){
+        box.onmousemove = null
+    }
+</script>

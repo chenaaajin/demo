@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://www.baidu.com">点击跳转</a>
+</body>
+</html>
+<script>
+    // a标签只输出不跳转，可以用javascript:;  阻止默认行为
+    // 在事件对象中也有一个方法可以阻止默认行为
+    document.querySelector('a').onclick = function(e){
+        var e = e || window.event
+        e.preventDefault()
+        // 兼容问题
+        // e.returnValue = false
+        if(e.preventDefault){
+            e.preventDefault()
+        }
+        else{
+            
+        }
+        console.log(123)
+    }
+
+    // 有些对象打印出来看不到方法 可以使用dir打印
+</script>

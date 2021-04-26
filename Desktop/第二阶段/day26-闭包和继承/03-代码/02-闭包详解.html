@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+        <ul>
+            <li></li></li>
+        </ul>    
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    // function fn(){
+    //     var a = 1;
+    //     function fn1(){
+    //         a++;
+    //         console.log(a)
+    //     }
+    //     return fn1;
+    // }
+    // var f = fn(); // f就是fn内部中嵌套返回的函数 - 也就是fn1
+    // f() 2
+    // f() 3
+    // f() 4
+
+    // 跟之前的函数会不一样
+    // function fn(){
+    //     var a =1;
+    //     a++;
+    //     console.log(a)
+    // }
+    // fn(); // 2
+    // fn(); // 2
+
+    // 闭包不会从头开始，每一次操作都是上一次的结果
+    // 函数执行后，执行空间没有销毁，变量会一直停留在空间中，一直保持
+    // 为什么没有销毁 - 因为函数返回值的值如果是复杂类型，那这个空间就不销毁了
+
+    function fn(){
+        var a = {
+            name:"张三"
+        }
+        return a;
+    }
+    var b = fn(); //赋值 - a是一个复杂类型，赋值是将地址复制一份给了新变量，新变量的值改变了，里面的a也会改变
+    b.age = 18;
+    console.log(b)
+</script>

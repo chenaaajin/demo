@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 130px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/0.jpg" alt="">
+    <img src="images/0.jpg" alt="">
+    <span> <img src="images/dot.jpg" alt=""></span>
+    <img src="images/0.jpg" alt="">
+    <img src="images/0.jpg" alt="">
+    <span> <img src="images/dot.jpg" alt=""></span>
+    <img src="images/0.jpg" alt="">
+    <img src="images/0.jpg" alt="">
+</body>
+
+</html>
+<script>
+    setInterval(function () {
+        // 获取当前时间
+        var date = new Date();
+        var hour = date.getHours()
+        var minute = date.getMinutes()
+        var second = date.getSeconds()
+
+        function fn(time){
+            if(time<10){
+                time = '0' + time
+            }
+            else{
+                time = "" +time // 下面可以不用再string转换
+            }
+            return time
+        }
+        hour = fn(hour)
+        minute = fn(minute)
+        second = fn(second)
+
+        var str = hour + minute + second;
+        // 赋值图片
+        var imgs = document.querySelectorAll("body>img")
+        // 代码优化
+        for(var i=0;i<str.length;i++){
+            imgs[i].setAttribute('src','images/'+str[i]+'.jpg')
+        }
+    })
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 只要是对象就自带__proto__的属性,也指向一个原型对象
+    function Person(){
+        this.name = '张三'
+    }
+    var zs = new Person()
+    console.log(zs.__proto__) // 对象的原型
+
+    // 对象就会有原型
+    console.log(zs.__proto__.__proto__) // 对象原型的原型
+
+    // 对象原型的原型对应的构造函数
+    console.log(zs.__proto__.__proto__.constructor)
+
+    // 原型的原型有什么用？
+    // 访问一个对象中的属性或者方法的时候,现在对象中找，如果灭有就去原型中找，原型也没有的话就去找原型的原型，一直往上层原型找，原型的顶层原型叫做null,如果一直找到null，也没有找到就返回undefined
+
+    // 找到原型的原型的原型
+    console.log(zs.__proto__.__proto__.__proto__)
+</script>

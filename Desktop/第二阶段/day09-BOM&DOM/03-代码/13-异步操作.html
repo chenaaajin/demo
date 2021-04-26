@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 同步操作:后面的代码等前面的代码执行完才能执行
+    // 异步操作:多段代码同时执行
+
+    // js本身是单线程的操作
+    // js单线程是在引擎里操作的，js没有多线程，不过浏览器有，这个异步操作是在浏览器中进行的
+    setTimeout(function(){
+        console.log(456)
+    },0) //定时器是一个异步操作  
+    console.log(123)
+
+    // 浏览器是如何解析异步代码的:(在栈内存中进行的)在栈内存中先执行同步代码，再执行异步代码，异步代码是在浏览器线程中执行的，需要在队列中等待，等同步执行完后在队列中根据定时器时间进行执行
+</script>

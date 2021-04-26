@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = ['1','2','3','4']
+    document.oncontextmenu = function(e){
+        var e = e || window.event
+        if(e.preventDefault){
+            e.preventDefault()
+        }
+        else{
+            e.returnValue = false
+        }
+        var x = e.clientX
+        var y = e.clientY
+        var ul = document.createElement('ul')
+        ul.style.width = '50px'
+        // ul.style.height = '200px'
+        ul.style.position = 'absolute'
+        ul.style.left = x + 'px'
+        ul.style.top = y + 'px'
+        ul.style.border = '1px solid #000'
+        ul.style.margin = '0'
+        ul.style.padding = '0'
+        ul.style.listStyle = 'none'
+        for(var i=0;i<arr.length;i++){
+            var li = document.createElement('li')
+            li.innerHTML = arr[i]
+            ul.appendChild(li)
+        }
+        document.body.innerHTML = ''
+        document.body.appendChild(ul)
+        // 事件委托
+        ul.onmouseover = function(ev){
+            var ev = ev || window.event
+            var target = ev.target || ev.srcElement
+            if(target.nodeName=='LI'){
+                // console.log(12)
+                target.style.background = "pink"
+            }
+        }
+        ul.onmouseout = function(ev){
+            var ev = ev || window.event
+            var target = ev.target || ev.srcElement
+            if(target.nodeName=='LI'){
+                target.style.background = "white"
+            }
+        }
+        // li的单击事件
+        ul.onclick = function(ev){
+            var ev = ev || window.event
+            var target = ev.target || ev.srcElement
+            if(target.nodeName=='LI'){
+                alert(target.innerText)
+            }
+        }
+    }
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  分支结构的嵌套
+    /*
+        if(){
+            if(){
+
+            }
+        }
+    */ 
+
+    //  需求：有三个变量-数字，需要一个分支结构判断哪个变量最大
+    var a = 1;
+    var b = 2;
+    var c = 3;
+    if(a>b){
+        //  a和c比较大小
+        if(a>c){
+            console.log("a是最大值")
+        }
+        else{
+            console.log("c是最大值")
+        }
+    }else{
+        if(b>c){
+            console.log("b是最大值")
+        }
+        else{
+            console.log("c是最大值")
+        }
+    }
+</script>

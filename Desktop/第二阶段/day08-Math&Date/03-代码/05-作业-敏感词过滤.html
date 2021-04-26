@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 敏感词过滤
+    // var str = '无论多大麻烦,黑夜总会过去' 
+    // var arr = ['大麻','夜总会']
+    // str.replace('大麻','**')
+    // str.replace('夜总会','**')
+    // console.log(str)
+    var str = '无论多大麻烦,黑夜总会过去' 
+    var arr = ['大麻','夜总会']
+    for(var i=0;i<arr.length;i++){
+        var index = ''
+        for(var j=0;j<arr[i].length;j++){
+        // arr[i].length = '夜总会'
+            index = index + "*"
+        }
+        str = str.replace(arr[i],index)
+    }
+    console.log(str)
+</script>

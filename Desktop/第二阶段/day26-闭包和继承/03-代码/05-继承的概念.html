@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  定义动物的构造函数
+    function Animal(){
+        this.eat = "能吃";
+        this.run = "能跑";
+    }
+    //  定义兔子的构造函数
+    function Rubbit(){
+        this.name="兔子";
+        this.foot="4条";
+    }
+    //  定义一个狗类构造函数
+    function Dog(){
+        this.name="狗";
+        this.foot="4条";
+        this.eat="能吃";
+        this.run="能跑";
+    }
+    var a = new Animal()
+    console.log(a)
+    var b = new Rubbit()
+    console.log(b,b.eat)
+    var c = new Dog()
+    console.log(c)
+
+    //  有没有一种简单的写法 - 兔子属于动物，狗也属于动物
+    //  继承：就是让一个对象具有另外一个对象的特性
+
+    //  怎么才能让一个对象能访问到另一个对象的属性？ 
+    //  继承方式 - 原型继承 - 访问一个对象的属性或者方法的时候，现在当前对象上找，找不到，就是这个对象的原型（对象）上找，找到了就直接访问
+    //  兔子的原型上如果有 eat和run的属性，就可以直接访问原型上的eat和run
+    //  最终的想法就是想让原型具有eat和run  -   让"a"成为兔子的原型
+    //  换原型
+    Rubbit.prototype = a;// 使用构造函数将原型换成需要的继承对象
+    var d = new Rubbit();
+    console.log(d)
+    console.log(d.eat)
+    
+</script>

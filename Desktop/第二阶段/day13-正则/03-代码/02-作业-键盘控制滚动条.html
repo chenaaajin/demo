@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            height: 10000px;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+    var timer;
+    document.onkeydown = function(e){
+        var e = e || window.event
+        var keycode = e.keycode || e.which
+        console.log(keycode)
+        if(keycode === 65){
+            clearInterval(timer)
+            // 设置滚动的距离慢慢的往上走
+            timer = setInterval(function(){
+                var top = document.documentElement.scrollTop || document.body.scrollTop
+                top -= 10
+                document.documentElement.scrollTop = document.body.scrollTop = top
+                console.log(123)
+            },20)
+        }
+        if(keycode === 83){
+            clearInterval(timer)
+            // 设置滚动的距离慢慢的往上走
+            timer = setInterval(function(){
+                var top = document.documentElement.scrollTop || document.body.scrollTop
+                top += 10
+                document.documentElement.scrollTop = document.body.scrollTop = top
+                console.log(123)
+            },20)
+        }
+    }
+    document.onkeyup = function(){
+        clearInterval(timer)
+    }
+</script>

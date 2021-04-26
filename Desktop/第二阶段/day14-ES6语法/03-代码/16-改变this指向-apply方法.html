@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // apply和call唯一的区别在于，当apply传参数的时候，参数需要是数组
+    function fn(a,b){
+        console.log(this)
+        console.log(a+b)
+    }
+    var obj = {
+        name:'zhangsan'
+    }
+    fn.apply(obj,[1,2])
+</script>

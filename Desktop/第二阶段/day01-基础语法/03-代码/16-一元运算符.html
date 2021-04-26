@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  一元运算符：自增 ++   自减 --
+
+    //  自增
+    var a = 1;
+    a++;//  让a自增1，从1变成2
+    console.log(a);// 2
+
+    var b = 1;
+    ++b;// ++在前在后都一样
+    console.log(b);
+
+    var c = 1;
+    console.log(c++);// 1
+    //  当自增自减运算碰到输出的时候
+    //  ++在前就先自增后输出，++在后先输出再自增
+    console.log(c);// 2
+
+    console.log(++c)// 写上面两个打印输出就是3，不写输出就是2
+
+    //  总结：变量单独进行自增自减的时候，符号在前在后没有区别
+    //  如果碰到输出、赋值、数学运算的时候，符号在前先自增自减
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 正常情况下数字都是以10进制显示的
+    var a = 3;
+    var res = a.toString(2) // 转换成2进制并且以字符串的方式显示
+    console.log(res)
+
+    // 以数字0开头的就是8进制的数
+    var a1 = 011;
+    var res1 = a1.toString(10);
+    console.log(res1)
+
+    // 以0x开头的表示16进制的数
+    var a2 = 0x111;
+    var res2 = a2.toString(10)
+    console.log(res2)
+
+    // 进制之间的转换 8/10/16可以转换为2/8/10/16
+
+    // 将其他进制转换为10进制使用parseInt
+    /*
+        parseInt(需要转换进制的数,把这个数看成几进制的数)
+    */
+    var a3 = '10'
+    var res3 = parseInt(a3,8)
+    console.log(res3)
+</script>

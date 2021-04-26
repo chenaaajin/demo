@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 面型对象就是操作对象
+    var zs = {
+        name:'张三',
+        age:'12'
+    }
+    var ls = {
+        name:'李四',
+        age:"11"
+    }
+    var ww = {
+        name:'王五',
+        age:'10'
+    }
+    console.log(zs,ls,ww)
+
+    // 重复再创建对象，可以使用函数创建
+    function fn(name,age){
+        var obj = {
+            name,
+            age
+        }
+        return obj
+    }
+    // 批量创建相同结构对象的这个函数就是工厂函数
+    var zs = fn('张三','12')
+    var ls = fn('李四','11')
+    var ww = fn('王五','10')
+    console.log(zs,ls,ww)
+
+    // 使用工厂函数可以创建多个对象,但是有一个缺点，由于每个对象的结构都是相同的，如果现在创建一个人的函数和动物的函数，就无法区分两个对象代表的是什么 - 解决这个缺点，可以使用构造函数
+</script>

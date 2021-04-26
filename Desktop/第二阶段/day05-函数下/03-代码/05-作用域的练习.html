@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 第一题
+    // var num = 10;
+    // fn1();
+    // function fn1(){
+    //     console.log(num) // underfined
+    //     var num = 20;
+    // }
+    /*
+        var num;
+        function fn1(){
+            var num;
+            console.log(umn)
+            num = 20;
+        }
+        num = 10
+        fn1()
+    */
+
+
+    //第二题
+    // var a = 18;
+    // fn2();
+    // function fn2(){
+    //     var b = 9;
+    //     console.log(a) // 18
+    //     console.log(b) // 9
+    // }
+    /*
+        var a;
+        function fn2(){
+            var b;
+            b = 9;
+            console.log(a)
+            console.log(b)
+        }
+        a = 18; // a是全局变量
+        fn2();
+    */
+
+
+    //  第三题
+    // fn3();
+    // console.log(c) // 9 -b和c一样，刚定义赋值的
+    // console.log(b) // 9
+    // console.log(a) // 报错
+    // function fn3(){
+    //     var a = b = c = 9;
+    //     console.log(a) // 9
+    //     console.log(b) // 9 - b在当前作用域中没有定义，全局中也没有定义，全局定义b并赋值
+    //     console.log(c) // 9
+    // }
+    /*
+        function fn3(){
+            var a = 9
+            a = 9
+            b = 9
+            c = 9
+            console.log(a)
+            console.log(b)
+            console.log(c)           
+        }
+        fn3();
+        console.log(c)
+        console.log(b)
+        console.log(a)
+    */
+
+    // 第四题
+    var a = 4;
+    console.log(a) // 4
+    a = 6;
+    console.log(a) // 6
+    function a(){
+        console.log("哈哈哈")
+    }
+    a(); // 报错
+    a = 10;
+    console.log(a)
+    /*
+        // var a; // 变量和函数名一样，变量不要了，以函数为准
+        function a(){
+            console.log("哈哈哈")
+        }
+        a = 4;
+        console.log(a)
+        a = 6;
+        console.log(a)
+        a(); // a是6了，再赋值就报错了，报错的下面就不执行了
+        a = 10;
+        console.log(a)
+    */ 
+</script>

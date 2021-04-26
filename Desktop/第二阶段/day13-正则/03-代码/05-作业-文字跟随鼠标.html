@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    document.onmousemove = function(e){
+        var e = e || window.event
+        var x = e.clientX
+        var y = e.clientY
+        var span = document.createElement('span')
+        span.innerHTML = '跟随文字'
+        span.style.position = 'absolute'
+        span.style.left = x + 'px'
+        span.style.top = y + 'px'
+        //document.body.innerHTML = '' // 这样不合适，body内容全部清空了
+        span.className = 'demo'
+        var s = document.querySelector('.demo')
+        if(s){
+            document.body.removeChild(s)
+        }
+        document.body.appendChild(span)
+    }
+</script>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="images/rank_3.gif" alt=""><img src="images/rank_4.gif" alt="">
+    <img src="images/rank_3.gif" alt=""><img src="images/rank_4.gif" alt="">
+    <img src="images/rank_3.gif" alt=""><img src="images/rank_4.gif" alt="">
+    <img src="images/rank_3.gif" alt=""><img src="images/rank_4.gif" alt="">
+    <img src="images/rank_3.gif" alt=""><img src="images/rank_4.gif" alt="">
+</body>
+
+</html>
+<script>var imgs = document.querySelectorAll("img");
+    // for (let i = 0; i < imgs.length; i++) {
+    //     imgs[i].onmouseover = function () {
+    //         for (var j = 0; j <= i; j++) {
+    //             if (j % 2 == 0) {
+    //                 imgs[j].src = "images/rank_1.gif"
+    //             }
+    //             else {
+    //                 imgs[j].src = "images/rank_2.gif"
+    //             }
+    //         }
+    //         for (var k = i + 1; k < imgs.length; K++) {
+    //             if (k % 2 == 0) {
+    //                 imgs[k].src = "images/rank_3.gif"
+    //             }
+    //             else {
+    //                 imgs[k].src = "images/rank_4.gif"
+    //             }
+    //         }
+    //     }
+    // }
+
+    //  利用闭包
+    for(var i=0;i<imgs.length;i++){
+        imgs[i].onmousemove = up(i);
+    }
+    function up(i){
+        return function(){
+            for (var j = 0; j <= i; j++) {
+                    if (j % 2 == 0) {
+                        imgs[j].src = "images/rank_1.gif"
+                    }
+                    else {
+                        imgs[j].src = "images/rank_2.gif"
+                    }
+                }
+                for (var k = i + 1; k < imgs.length; K++) {
+                    if (k % 2 == 0) {
+                        imgs[k].src = "images/rank_3.gif"
+                    }
+                    else {
+                        imgs[k].src = "images/rank_4.gif"
+                    }
+                }
+            }
+        }
+</script>

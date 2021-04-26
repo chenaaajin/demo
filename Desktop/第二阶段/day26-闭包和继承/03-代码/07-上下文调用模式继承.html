@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function Animal(){
+        this.eat = "能吃";
+        this.run = "能跑";
+    }
+    function Dog(){
+        // 使用上下文调用模式
+        /*
+            call、apply、bind 共同点都是可以改变this的指向
+            call怎么改变：可以调用函数，将里面的this改成目标参数  Animal.call(this)
+        */
+        Animal.call(this) // 这里的this指的是new Dog的对象d 
+        // 将animal的this改成了d - this.eat变成了d.eat
+        this.name="狗";
+    }
+    var d = new Dog();
+    console.log(d)
+
+    // 上下文调用模式/借用函数继承
+    // 有一个缺点 - 如果animal这个构造函数里面只绑定了属性，现在添加方法，就没办法继承原型上的方法
+    Animal.prototype.play = function(){
+        console.log("打闹")
+    }
+    d.play();// 没有继承原型上的方法，报错
+</script>

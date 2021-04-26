@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        img {
+            width: 130px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="images/0.jpg" alt="">
+    <img src="images/0.jpg" alt="">
+    <span> <img src="images/dot.jpg" alt=""></span>
+    <img src="images/0.jpg" alt="">
+    <img src="images/0.jpg" alt="">
+    <span> <img src="images/dot.jpg" alt=""></span>
+    <img src="images/0.jpg" alt="">
+    <img src="images/0.jpg" alt="">
+</body>
+
+</html>
+<script>
+    setInterval(function () {
+        // 获取当前时间
+        var date = new Date();
+        console.log(date)
+        var hour = date.getHours()
+        var minute = date.getMinutes()
+        var second = date.getSeconds()
+        if (hour < 10) {
+            hour = "0" + hour
+        }
+        if (minute < 10) {
+            minute = "0" + minute
+        }
+        if (second < 10) {
+            second = "0" + second
+        }
+        var str = hour + minute + second;
+        // console.log(str)
+        console.log(str)
+        // 赋值图片
+        var imgs = document.querySelectorAll("body>img")
+        // 第一个
+        var one = str[0]
+        imgs[0].setAttribute('src', "images/" + one + ".jpg")
+        // 第二个
+        var two = str[1]
+        imgs[1].setAttribute('src', "images/" + two + ".jpg")
+        // 第三个
+        var three = str[2]
+        imgs[2].setAttribute('src', "images/" + three + ".jpg")
+        // 第四个
+        var four = str[3]
+        imgs[3].setAttribute('src', "images/" + four + ".jpg")
+        // 第五个
+        var five = str[4]
+        imgs[4].setAttribute('src', "images/" + five + ".jpg")
+        // 第六个
+        var six = str[5]
+        imgs[5].setAttribute('src', "images/" + six + ".jpg")
+    })
+</script>

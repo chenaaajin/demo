@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;padding: 0;
+    }
+    .box{
+        width: 300px;
+        height: 30px;
+        margin: 100px auto 10px;
+        border: 1px solid #000;
+    }
+    .small{
+        width: 0px;
+        height: 30px;
+        background: red;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="small"></div>
+    </div>
+    <center>
+        <button class="start">开始</button>
+        <button class="stop">暂停</button>
+        <button class="continue">继续</button>
+        <button class="end">清零</button>
+    </center>
+</body>
+</html>
+<script>
+    var box = document.querySelector('.box')
+    var small = document.querySelector('.small')
+    // 开始
+    var start =document.querySelector('.start')
+    // 大盒子宽度
+    var boxWidth = box.clientWidth;// 大盒子宽高不影响，用哪个属性获取都可以
+    var timer;
+    start.onclick =function(){
+        clearInterval(timer) // 开始前清除 解决bug
+        timer = setInterval(function(){
+            var w = small.offsetWidth;
+            var w1  =  w + 2;
+            if(w1>=boxWidth){
+                w1 = boxWidth;
+                small.style.width = w1 + 'px'
+                clearInterval(timer)
+            }
+            small.style.width = w1 + 'px'
+            console.log('开始')
+        },50)
+    }
+
+    // 结束
+    var stop = document.querySelector('.stop')
+    stop.onclick = function(){
+        clearInterval(timer)
+    }
+
+    // 继续
+    var con = document.querySelector('.continue')
+    con.onclick =function(){
+        clearInterval(timer) // 开始前清除 解决bug
+        timer = setInterval(function(){
+            var w = small.offsetWidth;
+            var w1  =  w + 2;
+            if(w1>=boxWidth){
+                w1 = boxWidth;
+                small.style.width = w1 + 'px'
+                ll(timer)
+            }
+            small.style.width = w1 + 'px'
+            console.log('开始')
+        },50)
+    }
+
+    // 归零
+    var end =document.querySelector('.end')
+    end.onclick  = function(){
+        clearInterval(timer)
+        small.style.width = 0
+    }
+</script>

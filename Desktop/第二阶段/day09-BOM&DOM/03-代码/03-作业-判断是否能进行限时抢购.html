@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 判断当前时间能否进行抢购
+    // 判断当前时间戳是否在这个抢购时间的区间内
+    var now = +new Date();
+    var start = +new Date('2020-10-1')
+    var end = +new Date('2020-10-2')
+    if(now>=start&&now<=end){
+        alert('可以')
+    }
+    else{
+        alert('不可以')
+    }
+</script>

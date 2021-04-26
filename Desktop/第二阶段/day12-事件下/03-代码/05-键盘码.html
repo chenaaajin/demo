@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 在计算机内部每一个键盘都有编码，用来识别按下的是哪一个按键 
+    // 在事件对象中,也有一个属性来记录键盘码
+    window.onkeydown =  function(e){
+        var e = e || window.event;
+        // console.log(e.keyCode)
+        // 有兼容问题
+        var keycode = e.keyCode || e.which
+        console.log(keycode) 
+    }
+    // 常用的键盘码:13-回车键  32-空格键  37、38、39、40 上下左右
+    // 字母和数字的键盘码:字母和数字对应的阿斯克码
+
+    // 组合键 - 事件对象中有几个特殊的属性来记录是否按了特殊键
+    //  ctrl、shift、alt 记录的都是布尔值
+    //  ctrlKey、shiftKey、altKey
+    window.onkeydown = function(e){
+        var e  = e || window.event
+        var keycode = e.keyCode ||  e.which
+        if(e.shiftKey && keycode == 65){
+            console.log('大写A') 
+        }
+    }
+</script>

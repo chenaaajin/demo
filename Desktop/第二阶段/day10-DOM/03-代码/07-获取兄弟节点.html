@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box1">1</div>
+    <div class="box2">2</div>
+    <div class="box3">3</div>
+</body>
+</html>
+<script>
+    var box2 = document.querySelector('.box2')
+
+    // 获取上一个兄弟节点
+    console.log(box2.previousSibling)
+    // 获取上一个兄弟元素节点
+    console.log(box2.previousElementSibling)
+
+    // 获取下一个兄弟节点
+    console.log(box2.nextSibling)
+    // 获取下一个兄弟元素节点
+    console.log(box2.nextElementSibling)
+
+    // 获取父节点
+    console.log(box2.parentNode)
+    // 获取父元素节点 
+    console.log(box2.parentElement) // 两者一样 
+
+    // 获取节点的属性
+    console.log(box2.attributes)
+</script>

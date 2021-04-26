@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    ul{
+        margin: 0;padding: 0;
+        list-style: none;
+    }
+    li{
+        width: 300px;
+        height: 300px;
+        border: 1px solid red;
+        float: left;
+        margin: 20px 20px
+    }
+    </style>
+</head>
+
+<body>
+</body>
+
+</html>
+<script>
+    // 输出内容
+    // var arr = [
+    //     '两会前夕，总书记作出一个重要指示',
+    //     '习近平:"我"的扶贫情怀  没什么能阻挡中国前进步伐',
+    //     '习近平关于力戒形式主义官僚主义重要论述选编发行',
+    //     '代表委员履职故事  2020全国两会专题',
+    //     '战疫中的90后00后 以吾辈青春 守护锦绣中华',
+    //     '【中国稳健前行】听党指挥：人民军队建设的灵魂'
+    // ]
+    // document.write('<ul>')
+    // for(var i=0;i<arr.length;i++){
+    //     document.write('<li>' + arr[i] + '</li>')
+    // }
+    // document.write('</ul>')
+
+    var arr = [
+        {
+            img:'https://img10.360buyimg.com/babel/s180x180_jfs/t1/113575/37/2159/98244/5e9fa98dE2f0c9b19/ff71564caa8bcb43.jpg',
+            name:'海信 VIDAA 43V1F-R 43英寸',
+            price:'1000'
+        },
+        {
+            img:'https://img11.360buyimg.com/babel/s180x180_jfs/t1/124106/39/2446/191665/5ec5341fEb51a4187/04765fd98910d6e4.jpg',
+            name:'长虹55D5P 55英寸',
+            price:'2000'
+        },
+        {
+            img:'https://img12.360buyimg.com/babel/s180x180_jfs/t1/113159/12/7727/165667/5ec4a1a6Edab3b9dc/fe322754780b364d.jpg',
+            name:'飞利浦（PHILIPS）电视 65英寸 ',
+            price:'3000'
+        }
+    ]
+    document.write('<ul>')
+    for(var i=0;i<3;i++){
+        document.write('<li>')
+        document.write("<img src="+arr[i].img+">")
+        document.write("<p>"+ arr[i].name+"</p>")
+        document.write("<b>"+ arr[i].price+"</b>")
+        document.write('</li>')
+    }
+    document.write('</ul>')
+</script>

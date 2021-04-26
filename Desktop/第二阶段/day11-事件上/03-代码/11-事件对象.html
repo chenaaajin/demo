@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" style="width:100px;height:100px;background:red"></button>
+</body>
+</html>
+<script>
+    // 事件对象 - 一个事件有一个对象，这个对象记录了事件的各种详细信息
+    // 第一获取方式
+    btn.onclick = function(){
+        console.log(window.event)
+    }
+    // 第二种获取方式 
+    btn.onclick = function(e){
+        console.log(e) // 低版本ie不支持这种写法
+    }
+    
+    // 兼容写法
+    btn.onclick = function(){
+        var e = e || window.event
+        console.log(e)
+    }
+</script>

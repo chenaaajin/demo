@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>
+<script>
+    var box = document.querySelector('.box')
+    box.onmousedown = function(e){
+        var e = e || window.event
+        var boxLeft = e.offsetX // 当前元素距离左边的距离
+        var boxTop = e.offsetY  // 当前元素距离上边的距离
+        document.onmousemove = function(ev){
+            var ev = ev || window.event
+            var left =  ev.clientX - boxLeft // 移动的距离 
+            var top = ev.clientY - boxTop
+            box.style.left = left + 'px'
+            box.style.top = top + 'px'
+        }
+    }
+    box.onmouseup = function(){
+        document.onmousemove = null
+    }
+</script>

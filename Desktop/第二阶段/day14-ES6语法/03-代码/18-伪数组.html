@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
+<script>
+    // 伪数组看起来像数组，实际不是数组
+    var divs = document.querySelectorAll('div')
+    console.log(divs)
+
+    // 真实数组
+    var arr = [1,2,3,4,5]
+    console.log(arr)
+
+    // 区别在于伪数组除了下标以外还有一个length属性
+    // 可以手动定义伪数组 在真实数组中加一个length属性即可
+    // 伪数组可以for...in遍历，可以for(var i =0)这两种方式进行遍历
+    // 但是伪数组不可以使用数组的方法
+</script>

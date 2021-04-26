@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0;padding: 0;list-style: none
+    }
+    .box{
+        width: 500px;
+        height: 400px;
+        border: 1px solid  #000;
+        margin: 100px auto;
+    }
+    .box ul{
+        width: 100%;
+        height: 50px;
+        background: #ccc;
+    }
+    .box ul li{
+        width: 33.33%;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        float: left;
+    }
+    .box ul li.active{
+        background: #000;
+        color: #fff
+    }
+    .box ol{
+        height: 350px;
+    }
+    .box ol li{
+        width: 500px;
+        height: 350px;
+        background: #ccc;
+        display: none
+    }
+    .box ol li.active{
+        background: pink;
+        display: block
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class='active'>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+        <ol>
+            <li class="active">1</li>
+            <li>2</li>
+            <li>3</li>
+        </ol>
+    </div>
+</body>
+</html>
+<script>
+    var ulis = document.querySelectorAll('ul li')
+    var olis  =  document.querySelectorAll('ol li')
+    for(var i=0;i<ulis.length;i++){
+        ulis[i].setAttribute('index',i)
+        olis[i].setAttribute('index',i)
+        ulis[i].onclick=function(){
+            // 点击li去掉其他的active，当前的加上active
+            for(var j=0;j<ulis.length;j++){
+                ulis[j].className = ''
+            }
+            this.className = 'active'
+
+            // ol
+            for(var j=0;j<olis.length;j++){
+                olis[j].className = ''
+            }
+            // 获取对应的下标
+            var index = this.getAttribute('index')
+            console.log(index)
+            olis[index].className = 'active'
+    }
+    }
+</script>

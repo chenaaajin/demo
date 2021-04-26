@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text">  <!-- 其他的表单元素操作是一样的 -->
+    <select>
+        <option value="1">安徽省</option>
+        <option value="2">江西省</option>
+        <option value="3">湖南省</option>
+    </select>
+    <button id="btn">按钮</button>
+</body>
+</html>
+<script>
+    // 表单内容的获取
+    var text = document.querySelector('[type="text"]')
+    btn.onclick = function(){
+        // 获取表单内的值使用value
+        console.log(text.value)
+        console.log(document.querySelector('select').value)  // 获取的是select,子级option有vale就获取value，没有的话就获取的是文本
+    }
+</script>

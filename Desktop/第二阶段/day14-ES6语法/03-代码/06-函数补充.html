@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // function(){}
+    // 匿名函数的用法
+    // 1.可以赋值给一个变量
+    // 2.匿名函数可以赋值给事件
+    // 3.匿名函数自执行
+    (function(){
+        console.log(123)
+    })()
+    
+    // 匿名函数自执行的几种方式
+    // 1.使用小括号把函数代码包起来
+    // 2.在函数前面加波浪线
+    // 3.在函数前面加感叹号
+    ~function(){
+        console.log(123)
+    }()
+    !function(){
+        console.log(456)
+    }()
+
+    // 为什么会有函数自执行
+    for(var i=1;i<=3;i++){
+        // function fn(i){
+        //     setTimeout(function(){
+        //         console.log(i)
+        //     },1000);
+        // }
+        (function(i){
+            // 单独的作用域
+            setTimeout(function(){
+                console.log(i)
+            },1000);
+        })(i)
+    }
+</script>

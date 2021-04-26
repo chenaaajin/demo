@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function fn(){
+        var a = 1;
+        return function(){
+            a++;
+            console.log(a)
+        }
+    }
+    var f = fn();//将里面的匿名函数赋值给了变量f，是复杂类型，使用的是一个内存地址，所以外面的的空间在，里面的空间也就是存在的
+    f();
+    f();
+    //  闭包的特点：
+    //  1.里面的函数小空间不会被销毁，延长了变量的生命周期
+    //  2.保护了私有变量不被全局污染，让数据更安全
+    //  3.让全局可以访问到局部的数据
+
+    //  缺点：内存不销毁，容易造成内存溢出/内存泄漏
+</script>

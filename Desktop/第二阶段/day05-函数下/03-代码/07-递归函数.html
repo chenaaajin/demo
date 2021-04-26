@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //求1~5的和
+    /*
+        1.先定义一个空函数
+        2.调用函数,并传入需要的参数
+        3.在函数中调用自己，并传入合适的参数
+        4.加条件以及return
+    */
+    // function fn(num){
+    //     if(num==1){
+    //         return 1;
+    //     }
+    //     return num + fn(num-1)
+    // }
+    // var res = fn(5) // 5 + 4 + 3 + 2 + 1
+    // console.log(res)
+
+
+    //计算5以内正数的乘积
+    // function fn(num){
+    //     if(num==1){
+    //         return 1
+    //     }
+    //     return num * fn(num-1)
+    // }
+    // var res = fn(5)
+    // console.log(res)
+
+    // 黄金分割数列、菲波那切数列 - 使用递归
+    /*
+        菲波那切数列  1 1 2 3 5 8 13 21 34 55 89...
+    */
+    //每个数字都是前面两个数字的和，只有前面两个数字是固定的 0 1 1 2
+    function fn(num){
+        if(num==1){
+            return 1
+        }
+        if(num==2){
+            return 1
+        }
+       return fn(num-1) + fn(num-2)
+    }
+    var res = fn(10)
+    console.log(res)
+    /*
+        总结：
+            1.通过判断和调用自己实现了类型循环能停止的效果
+            2.递归通常的主要结构是分支判断停止、返回一个表达式、调用自己的表达式
+            3.任何代码执行都是要在内存中执行，普通代码执行以后，就会从内存中移除，但是递归在执行结束之前，特别消耗内存，所以能不用递归就不要用递归
+            4.暂时递归做了解，面试只会问简单，会写一些简单案例即可，不要深究
+    */
+</script>

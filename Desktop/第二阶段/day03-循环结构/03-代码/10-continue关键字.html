@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //continue关键字跳过当前这一次循环，立马执行下一次的循环
+    for(var i=1;i<=10;i++){
+        // 希望执行完3后进行到下一次的循环输出5 - 跳过4
+        if(i==4){
+            continue;
+        }
+        document.write(i+"<br>")
+    }
+
+    // 注意:如果在循环嵌套中，break和continue只针对关键字所在的这一层循环生效
+    
+</script>

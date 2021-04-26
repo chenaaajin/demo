@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="font/iconfont.css">
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        ul,ol,li{
+            list-style: none
+        }
+        ul{
+            width: 200px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            text-align: center;
+        }
+        ol{
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li>
+            <h2 onoff='1'>
+                <i class="iconfont icon-sanjiaoright"></i>
+                我的好友</h2>
+            <ol>
+                <li>张三</li>
+                <li>张三</li>
+                <li>张三</li>
+            </ol>
+        </li>
+        <li>
+            <h2 onoff='1'>
+                <i class="iconfont icon-sanjiaoright"></i>
+                我的好友</h2>
+            <ol>
+                <li>李四</li>
+                <li>李四</li>
+                <li>李四</li>
+            </ol>
+        </li>
+        <li>
+            <h2 onoff='1'>
+                <i class="iconfont icon-sanjiaoright"></i>
+                我的好友</h2>
+            <ol>
+                <li>王五</li>
+                <li>王五</li>
+                <li>王五</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+
+</html>
+<script>
+    // 获取h2添加点击事件
+    var h2s = document.querySelectorAll('h2')
+    for(var i=0;i<h2s.length;i++){
+        // var onoff = 1
+        h2s[i].onclick= function(){
+            var onoff= this.getAttribute('onoff')
+            var ol = this.nextElementSibling;// 隐藏消失
+            var jiantou = this.firstElementChild;//箭头
+            if(onoff==1){
+                ol.style.display  = 'block'
+                // onoff=2
+                this.setAttribute('onoff',2)
+                jiantou.className = 'iconfont icon-xiajiantou'
+            }else{
+                ol.style.display  = 'none'
+                this.setAttribute('onoff',2)
+                jiantou.className = 'iconfont icon-sanjiaoright'
+            }
+        }
+    }
+</script>

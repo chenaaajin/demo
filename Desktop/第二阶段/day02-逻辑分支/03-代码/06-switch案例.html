@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  输入月份，显示这个月有多少天
+    var month = prompt("请输入一个月份");
+    switch(month){
+        case "1":
+            console.log("31天")
+        break;
+        case "2":
+            console.log("28天或者29天")
+        break;
+        case "3":
+            console.log("31天")
+        break;
+        case "4":
+            console.log("30天")
+        break;
+        case "5":
+            console.log("31天")
+        break;
+        case "6":
+            console.log("30天")
+        break;
+        case "7":
+            console.log("31天")
+        break;
+        case "8":
+            console.log("31天")
+        break;
+        case "9":
+            console.log("30天")
+        break;
+        case "10":
+            console.log("31天")
+        break;
+        case "11":
+            console.log("30天")
+        break;
+        case "1":
+            console.log("31天")
+        break;
+        default:
+        console.log("输入有误")
+    }
+    //  优化代码 = > 可以把case写到一起，console.log共用
+
+    //  总结：
+    //      1.switch只能判断是否相等
+    //      2.判断使用 === 来进行
+    //      3.break是用来终止switch执行，去掉以后，就会执行下一个case
+</script>

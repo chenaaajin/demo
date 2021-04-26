@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 冒泡排序:让数组中的两个相邻的两个数字进行比较，如果不符合排序规则，就交换两个位置上的值
+
+    // 如何交换两个位置上的值？
+    // var arr =[1,2]
+    // // arr[0]  arr[1] 两个变量进行进行交换
+    // var res = arr[0] // res=1 arr[0]=1 arr[1]=2
+    // arr[0] = arr[1] // res=1 arr[0]=2 arr[1]=2
+    // arr[1] = res  // res=1 arr[0]=2 arr[1]=1
+    // console.log(arr)
+
+    // 代码实现冒泡排序
+    var arr = [3,6,7,2,4,1,9,0,0,3,2]
+    for(var i=0;i<arr.length-1;i++){
+        // 控制循环几次，次数-1
+        for(var j=0;j<arr.length-1;j++){
+            // 控制每次循环比较几个元素
+            if(arr[j]>arr[j+1]){
+                var res = arr[j]
+                arr[j] = arr[j+1]
+                arr[j+1] = res;
+                // 判断每一次比较的时候，两个数字的大小
+                // arr[j]是第j个元素
+                // arr[j+1]是第j+1 个元素               
+                //如果j > j + 1， 把j 和j+i交换，也就是把相对大的值往后排序 也就是从小到大排序
+                //如果j < j + 1， 把相对小的值往后排 也就是从大到小排序
+
+            }
+        }
+    }
+    console.log(arr)
+</script>

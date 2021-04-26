@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 写一个qq号的正则表达式
+    // 5~12位的数字，不能以0开头
+    /* var reg = /\d{5,12}/ // 5~12位数字
+    var reg = /[1-9]\d{4,11}/ // 第一位为1~9之间的数,后面是4~11位的任意数字
+    var str = '1234567891234' // 有13位，正常是提取不到的
+    var res = str.match(reg) // 提取是从前往后找满足的部分，前面12位是可以提取到的,最后一位不满足
+    var res = reg.test(str)
+    console.log(res) // 这种方式是不严谨的 */
+
+    var reg = /^[1-9]\d{4,11}$/
+    // 首位的修饰符 - 修饰开头结尾必须是规定好的
+    // 开头的修饰符 ^
+    // 结尾的修饰符 $
+    var str = '1234567891111'
+    var res = reg.test(str)
+    console.log(res)
+</script>

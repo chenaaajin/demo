@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <button id="btn">按钮</button>
+</body>
+</html>
+<script>
+    // 将自己的事件委托给父级元素去做 -  事件委托
+    /*var lis  = document.querySelectorAll('li')
+    for(var i=0;i<lis.length;i++){
+        lis[i].onclick  = function(){
+            console.log(this.innerText)
+        }
+    }
+    btn.onclick = function(){
+        var li = document.createElement('li')
+        var length = lis.length
+        length++
+        li.innerText = length 
+        document.querySelector('ul').appendChild(li)
+    }*/
+    // 上面添加后的li打印没有数字，因为新创建的元素没有绑定点击事件
+    // 利用事件委托给父元素添加绑定事件  事件对象.target
+    var lis  = document.querySelectorAll('li')
+    var ul  =  document.querySelector('ul')
+    btn.onclick = function(){
+        var li = document.createElement('li')
+        var length = lis.length
+        length++
+        li.innerText = length 
+        document.querySelector('ul').appendChild(li)
+    }
+    ul.onclick = function(e){
+        var e  =  e  || window.event
+        if(e.target.nodeName =='LI'){
+            console.log(e.target.innerText)
+        }
+    }
+    // 事件冒泡的原理:点击子元素，父元素的事件会在冒泡阶段执行
+    // 好处:
+    //    - 提高性能，事件只需要绑定一次
+    //    - 动态添加的子元素也具有事件
+</script>

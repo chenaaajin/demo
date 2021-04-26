@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 快速的将对象/数组中的值赋值给一个变量
+    // var obj ={
+    //     name:'张三',
+    //     age:10
+    // }
+    // var {name,age} = obj // 变量名和对象中的属性名要保持一致
+    // console.log(name,age)
+
+    // var {name:a,age:b} = obj // 取别名
+    // console.log(a,b)
+
+    // 多重解构
+    var obj = {
+        name:"张三",
+        age:12,
+        wife:{
+            name:'翠花'
+        }
+    }
+    var {wife} = obj
+    var {name} = wife
+    console.log(name)
+    // 解构一次
+    var {wife:{name}} = obj
+    console.log(name)
+    // 也可以
+    var {name} = obj.wife
+    console.log(name)
+</script>

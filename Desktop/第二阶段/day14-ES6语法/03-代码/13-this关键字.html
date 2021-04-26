@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="按钮" id="btn">
+</body>
+</html>
+<script>
+    // this关键字在不同的地方代表不同的含义
+    // 在普通函数中就代表window
+    function fn(){
+        console.log(this)
+    }
+    fn()
+
+    // 在事件函数中代表事件源
+    document.onkeypress = function(){
+        console.log(this)
+    }
+
+    // 在定时器函数中 代表window
+    btn.onclick = function(){
+        setTimeout(function(){
+            console.log(this)
+        })
+    }
+
+     // 在自执行函数中 代表window
+     btn.onclick = function(){
+       ~function(){
+           console.log(this)
+       }()
+    }
+
+    // 在箭头函数中没有this这个关键字
+    btn.onclick = function(){
+        // 箭头函数中的this指的是上一行代码中的this，代表事件源
+        setTimeout(()=>{
+            console.log(this)
+        })
+    }
+
+    // 对象方法中this代表这个对象
+    var obj = {
+        name:'zhangsan',
+        eat:function(){
+            console.log(this)
+        }
+    }
+    obj.eat()
+</script>

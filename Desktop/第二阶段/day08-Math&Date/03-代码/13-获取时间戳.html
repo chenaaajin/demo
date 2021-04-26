@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 获取毫秒数 1000ms = 1s
+    var date = new Date()
+    var milli = date.getMilliseconds()
+    console.log(milli)
+
+    // 获取时间戳 - 从1970年1月1号0时0分0秒到现在的毫秒数
+    var res = date.getTime()
+    console.log(res)
+
+    // 获取到某个时间的时间戳
+    var a = Date.parse('2020-5-1 00:00:00')
+    console.log(a)
+
+    // 传入时间，获取时间戳
+    var b = new Date('2020-8-11 10:07:00')
+    console.log(b.getTime())
+
+    // 传入参数0
+    var c = new Date(0)
+    console.log(c) // 格林威治时间
+</script>

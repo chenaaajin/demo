@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div{
+            width: 400px;
+            height: 200px;
+            border: 1px solid #000;
+            line-height: 200px;
+            font-size: 50px;
+        }
+        input{
+            width: 80px;
+            height: 30px;
+            margin: 20px 10px;
+            outline: none;
+            border: 1px solid #ccc;
+            cursor: pointer;
+        }
+        input:nth-of-type(1){
+            background: pink
+        }
+        input:nth-of-type(2){
+            background: greenyellow
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>点名程序</h1>
+        <div id="box">你好</div>
+        <input type="button" value="开始" id="start">
+        <input type="button" value="暂停" id="clear">
+    </center>
+</body>
+</html>
+<script>
+    // 在一个数组中存放随机的姓名
+    var arr = ['张三','李四','王五','小明','校长','小红','小花','小化','小李']
+    var timer; // 全局声明，start里面赋值，最后需要清除定时器
+    start.onclick=function(){
+        // 让名字滚动起来，设置一个定时器，每隔多长时间执行一次函数
+        timer = setInterval(function(){
+            // 随机获取一个姓名
+            var index = parseInt(Math.random()*arr.length)
+            console.log(index)
+            var name = arr[index]
+            console.log(name)
+            // 把名字插入到div盒子中
+            box.innerHTML = name;
+        },100)
+    }
+    // document.getElementById('stop').onclick=function(){
+    //     clearInterval(timer)
+    //     console.log(222)
+    // }
+    // 不要用stop,关键字
+    clear.onclick=function(){
+        clearInterval(timer)
+        console.log(111)
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">文本</div>
+</body>
+</html>
+<script>
+    // 内容的获取 dom元素.innerHTML - 可以获取和设置的属性(标签也可以)
+    var box = document.querySelector('.box')
+    console.log(box.innerHTML) // 获取
+    box.innerHTML = '<center>改掉文本</center>' // 设置
+
+    // 内容的获取 dom元素.innerText - 可以获取和设置的属性(不可以设置标签)
+    var box = document.querySelector('.box')
+    console.log(box.innerText) // 获取
+    box.innerText = '<b>改掉文本</b>' // 设置,标签不解析
+
+    // 内容获取 dom元素.outerHTML 
+    console.log(box.outerHTML)
+    box.outerHTML = '<i>文本</i>' // 获取设置内容(标签解析)，区别是打印的时候带有当前标签
+
+</script>

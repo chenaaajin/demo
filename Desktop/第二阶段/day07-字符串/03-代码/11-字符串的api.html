@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 字符串直接创建 - 字面量方式
+    // var str = '123'
+    // 构造函数方式创建字符串
+    // var str = new String('123')
+
+    //API - 接口 - 就是写好的方法，只需要调用即可
+
+    // charAt 通过下标获取字符串对应的字符
+    var str = '12345'
+    var res = str.charAt(0)
+    console.log(res) 
+    // 字符串是有下标的，可以直接获取
+    console.log(str[0])
+    // 字符串可不可以进行增删改查呢？ - 不可以，只可读
+    // str[0] = 'a';
+    // console.log(str)
+    // 字符换也可以进行遍历
+    // for(var i=0;i<str.length;i++){
+    //     console.log(str[i])
+    // }
+
+    // 字符串的长度 字符串.length
+
+    // charCodeAt 通过下标获取对应字符的阿斯克码
+    console.log(str.charCodeAt(0))
+    // String.fromCharCode 通过阿斯克码得到字符
+    console.log(String.fromCharCode(98))
+
+    // split 字符串分割 - split(分隔符号) 将字符串分割成多段，返回一个数组
+    var str1 = 'hello-world'
+    var res1 = str1.split('-')
+    console.log(res1)
+    // 还可以在分隔符号后面加一个数字，这个数字表示保留的数组个数
+    var res2  = str1.split('-',1)
+    console.log(res2)
+
+    // substring 截取字符串
+    // str.subString(开始的下标,结束的下标)
+    var res3 = str1.substring(1,2)
+    console.log(res3) 
+    /* 注意点：
+        - 得出的结果包含了开始下标位置的字符，不包含结束下标位置的字符
+        - 结束的下标参数可以省略,省略表示从开始下标到字符串结束位置
+        - 开始下标=结束下标,返回空字符串
+        - 开始下标>结束下标,先交换位置,再进行截取
+        - 如果开始或者结束下标为负数，先为0，后进行截取
+    */
+
+    // substr 截取字符串
+    var res4 = str1.substr(-4,1)
+    console.log(res4)
+    /*
+        substr(开始下标,截取的个数)
+            - 第二个参数可以省略，省略就是截取到末尾
+            - 第一个参数可以用负数表示,从右往左就是-1,-2,,-3,,第二个参数表示保留的个数，要小于等于第一个参数值，例如-3表示截取3个，第二个参数，只能写0-3保留0-3个字符
+    */ 
+
+    // slice 截取字符串
+    // hello-world
+    // str1.slice(开始下标,结束下标)
+    var res5 = str1.slice(-2,-1)
+    console.log(res5)
+    /*
+        - 不包含结束下标的字符
+        - 第二个参数可选，不写表示截取到末尾
+        - 第一个参数可以为负数，注意第二个参数不是保留字符个数，会返回空
+        - 两个参数都可以为负数，注意第一个参数要小于第二个，因为截取是从左往右的，但是负数从右往左去数
+    */ 
+
+    // 大小写转换
+    // str.toUpperCase() 转换为大写
+    // str.toLowerCase() 转换为小写
+
+    // concat 字符串拼接
+    // var a = '1'
+    // var b = '2'
+    // console.log(a.concat(b))
+
+    // indexOf lastIndexOf 查找字符
+    var str1 = 'hhhello hworld'
+    var res6 = str1.indexOf('h')
+    console.log(res6)  
+    
+    var res7 = str1.lastIndexOf('h')
+    console.log(res7)
+    //  indexof表示第一次出现的位置，是从左往右数的
+    //  lastindexof表示最后一个出现位置,虽然是从后面往前数的，但是返回索引还是从左往右的
+
+    // 小案例:如何判断当前只能上传文件类型为图片
+    var img = 'a.b.b.c.jpg'
+    var index = img.lastIndexOf('.') // 意思上是从右往左，数下标还是从左往右的
+    console.log(index)
+    var last = img.slice(index+1)
+    console.log(last)
+
+    // 
+</script>

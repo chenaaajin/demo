@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //变量和函数起到作用的区域是有规定的
+    // function fn(){
+    //     var a = 1;
+    // }
+    // fn();
+    // console.log(a) //a is not defined -定义在函数内部的变量不能在函数外部使用
+
+    var a = 1; //全局变量 - 不在任何函数中定义的变量
+    function fn(){
+       a = 2;
+       // 不写var，重新赋值，写了就会输出1 ？？？
+    }
+    fn()
+    console.log(a) //函数中的变量a用的是函数外面定义的a
+
+    //作用域:变量和函数能起到作用的区域
+    //全局的作用域:在页面中的任何地方都能使用
+    //局部变量 - 定义在函数内部的变量 - 局部作用域就是函数内部
+</script>

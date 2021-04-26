@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        1
+        <p>2</p>
+        3
+        <span>4</span>
+    </div>
+</body>
+</html>
+<script>
+    // 子节点(盒子下面所有元素，包含空格换行)
+    // 子元素节点(标签元素)
+
+    // 获取标签下面的所有子节点 childNodes
+    var box = document.querySelector('div')
+    console.log(box.childNodes)  //  获取所有子节点，包含空格换行(text)
+    // 获取标签下面的子元素节点(标签) children
+    console.log(box.children)
+
+    // 获取第一个子节点 firstChild
+    console.log(box.firstChild)
+    // 获取第一个子元素节点
+    console.log(box.firstElementChild)
+
+    // 获取最后一个节点
+    console.log(box.lastChild)
+    // 获取最后一个子元素节点
+    console.log(box.lastElementChild)
+
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 数组的常用方法(重点)
+
+    // 数组的增删操作
+    // 1.给数组末尾添加元素 - push方法
+    // 语法：数组.push(被添加的值)
+    var arr = [1,2,3]
+    arr.push(4)
+    console.log(arr)
+    // 2.给数组开头添加元素 - unshift
+    // 语法：数组.unshift(被添加的值)
+    arr.unshift(0)
+    console.log(arr)
+    // 3.删除数组最后一个元素 - pop
+    arr.pop()
+    console.log(arr)
+    // 4.删除数组第一个元素
+    // 数组.shift()
+    arr.shift()
+    console.log(arr)
+
+    // 给数组添加或者删除元素
+    // 删除 - 语法：数组.splice(开始的下标,删除值的个数)
+    var arr1 = [1,2,3]
+    arr1.splice(0,1)
+    console.log(arr1) // [2,3]
+    // 添加 - 语法：数组.splice(开始下标,0,要添加的元素)
+    arr1.splice(0,0,5)
+    console.log(arr1) // [5,2,3]
+    // 删除再添加 
+    arr1.splice(0,1,9)
+    console.log(arr1)
+    // 添加多个
+    arr1.splice(0,0,1,2,3,4)
+    console.log(arr1)
+</script>

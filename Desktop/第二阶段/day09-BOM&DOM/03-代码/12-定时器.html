@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 定时器 - 让代码每隔一段时间执行或者延迟多长时间执行
+    /*
+        window.setInterval(函数,毫秒数)
+    */
+    var num = 0;
+    var res = setInterval(function(){
+        document.write(++num)
+    },1000)
+    console.log(res)
+
+    /*  
+        var num = 0;
+        var res = setInterval(function(){
+            document.write(++num)
+        },1000)
+        console.log(res) 这个返回值为2，是第二个定时器
+    */
+
+    // 定时器一直运行会一直运行在内存中
+    // 停止定时器 clearInterval
+    // 用法 clearInterval(定时器的返回值) - 返回值就是当前页面中的第几个定时器
+
+
+    // 延迟器-延迟多长时间后执行
+    // 语法:setTimeout(函数,毫秒数)
+    setTimeout(function(){
+        console.log(num)
+    },1000) // 只会执行一次，同样的延迟器也有返回值
+</script>

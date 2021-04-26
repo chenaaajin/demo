@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 语法
+    /*
+        1.创建工具
+        //  声明式
+        function关键字 函数的名称(){   - 函数名要求和变量是一样的
+                //你想重复使用的代码
+        }
+        //赋值式 - 就是将一个写好的函数赋值给一个变量
+        var 变量 = function(){}
+
+        2.使用的工具 - 调用
+            声明式  -   函数名();
+            赋值式  -   变量名();
+    */
+
+    function fn(){  // 函数定义好以后是一段代码块不会运行，需要激活开关调用
+        console.log(1)
+    }
+    fn();
+
+    var fn1 = function(){
+        console.log(1)
+    }
+    fn1();
+</script>

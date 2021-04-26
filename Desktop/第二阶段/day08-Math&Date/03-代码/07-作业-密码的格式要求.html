@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 密码的格式要求
+    /*
+        密码要求的格式：数字、小写字母、大写字母
+        数字0-9对应的阿斯克码：048-057
+        小写a-z对应的阿斯克码：065-090
+        大写A-Z对应的阿斯克码：097-122
+    */
+    var password = prompt('请输入密码')
+    // 输入的密码是一个字符串，先判断输入的长度
+    if (password.length > 6 && password.length < 16) {
+        // alert('ok')
+        var obj = {};
+        for (var i = 0; i < password.length; i++) {
+            if (password[i].charCodeAt(0) >= 48 && password[i].charCodeAt(0) <= 57) {
+                // 一个字符串，这个字符的下标就是0
+                obj['shuzi']=1;
+            } else if (password[i].charCodeAt(0) >= 65 && password[i].charCodeAt(0) <= 90) {
+                obj['xiaoxie']=2
+            } else if (password[i].charCodeAt(0) >= 97 && password[i].charCodeAt(0) <= 122) {
+                obj['daxie']=3
+            } else {
+                alert('密码错了啦')
+            }
+        }
+    // 接下来把三个字符串放到一起，只要当前字符串不为0即可 - 判断obj里面有几个键就可以
+    var k = 0; // 多少个，初始值为0 计数
+    for(var i in obj){
+        k++;
+    }
+    if(k==3){
+        alert('ok')
+    }
+    else{
+        alert('密码还是有问题呀~')
+    }
+    } else {
+        alert('密码长度有问题')
+    }
+</script>

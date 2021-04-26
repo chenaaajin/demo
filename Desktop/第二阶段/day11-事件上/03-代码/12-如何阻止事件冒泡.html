@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .big {
+            width: 400px;
+            height: 400px;
+            background: red;
+        }
+
+        .middle {
+            width: 300px;
+            height: 300px;
+            background: pink;
+        }
+
+        .small {
+            width: 200px;
+            height: 200px;
+            background: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="middle">
+            <div class="small"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    // 阻止事件冒泡 - 其他元素默认在冒泡阶段执行
+    var big = document.querySelector('.big')
+    var middle = document.querySelector('.middle')
+    var small = document.querySelector('.small')
+    big.onclick = function () {
+        console.log('大盒子')
+    }
+    middle.onclick = function () {
+        console.log('中间盒子')
+    }
+    small.onclick = function (e) {
+        // 阻止事件冒泡
+        var e = e || window.event
+        if(e.stopPropagation){
+            e.stopPropagation()
+        }
+        else{
+            e.cancelBubble = true // ie兼容
+        }
+        console.log('小盒子')
+    }
+    // 有兼容问题
+
+</script>

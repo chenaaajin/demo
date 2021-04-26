@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 通常情况下系统提供的构造函数首字母都是大写的
+    // 自己定义的构造函数也应该首字母大写
+    function Person(name,age){
+        // 1.var obj = {}
+        // 2.this = obj
+        // 这里的this代表被new出来的这个对象
+        this.name = name
+        this.age  = age
+        // return this
+    }
+    var zs = new Person('张三',12)
+    console.log(zs)
+    var ls = new Person('李四',11)
+    console.log(ls)
+
+    // 有一道常见的面试题 - 构造函数创建对象的时候,new操作符做了哪些事
+    /*
+        1.在构造函数中创建一个空对象
+        2.将函数的指向this指向这个空对象
+        3.执行函数中代码 - 绑定属性和方法
+        4.将整个对象返回
+    */ 
+</script>

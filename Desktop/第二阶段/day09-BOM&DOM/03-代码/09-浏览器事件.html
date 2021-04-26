@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    p*100{$}
+</body>
+</html>
+<script>
+    // 浏览器事件 window.onXXX(事件的类型) = function(){}
+    // load 表示加载 -  当页面中的所有内容都加载完后 再执行这个事件 
+    // 写这个事件建议放在html页面的最下方，因为代码执行有顺序
+    window.onload = function(){
+        btn.onclick= function(){
+            console.log('111')
+        }
+    }
+
+    // resize 表示浏览器窗口大小发生改变时候触发的事件
+    var num = 1;
+    window.onresize = function(){
+        console.log(++num)
+    }
+
+    // scroll 表示当浏览器滚动条发生滚动时候触发的事件
+    var height = 1;
+    window.onscroll = function(){
+        console.log(++height)
+    }
+</script>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  需求：有4个同学，每个人都围着操场跑5圈
+    for(var i=1;i<=4;i++){
+        //这里的代码需要重复执行
+        //大括号中放的是代码段，符合语法的语句都可以放在这里执行
+        for(var j=1;j<=5;j++){
+            console.log("第"+i+"个人","跑了第"+j+"圈")
+        }
+    }
+
+    //循环嵌套的应用
+    document.write("<b>文字</b>")
+    //上面的一行代码就相当于下面的这三行代码
+    document.write("<b>")
+    document.write("文字")
+    document.write("</b>")
+    //如何输出一个8*8的表格?
+    //思路：table开头 - (tr开头-8个td-tr结束)*8 - table结束
+    document.write("<table border=1>")
+    for(var i=1;i<=8;i++){
+        document.write("<tr>")
+            for(var j=1;j<=8;j++){
+                document.write("<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>")
+            }
+        document.write("</tr>")
+    }
+    document.write("</td>")
+</script>

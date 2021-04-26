@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    function fn(a,b=2){
+        console.log(a+b)
+    }
+    fn(1) // 3 没有第二个对应的实参，形参b默认为2
+    fn(1,3) // 4 传入了就会覆盖掉
+
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 如果有一段字符串中有多个部分满足正则表达式,如何匹配多个结果
+    // 正则中有一个贪婪匹配，从左往右进行匹配满足规则就返回
+    var reg = /\d+/g // 贪婪匹配，全局匹配
+    var str = '12eeqwe1231f214'
+    var res = str.match(reg)
+    console.log(res)
+
+    // 还有一个模式修正符 忽略大小写
+    var reg = /html/gi
+    var str = 'i love html and HTML is good' // 单个字母大小写也可以
+    var ment = 'js'
+    var res = str.replace(reg,ment)
+    console.log(res)
+</script>

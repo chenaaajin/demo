@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 100px auto;
+            position: relative;
+        }
+        .shade{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            opacity: 0.5;
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="shade"></div>
+    </div>
+</body>
+</html>
+<script>
+    var box = document.querySelector('.box')
+    var shade = document.querySelector('.shade')
+    box.onmousemove = function(){
+        shade.style.display = 'block'
+        // 在大盒子中移动
+        box.onmousemove =  function(e){
+            var e = e || window.event
+            var x =  e.clientX
+            var y =  e.clientY
+            console.log(x,y)
+            // 获取大盒子的外面间距
+            var boxLeft = box.offsetLeft
+            var boxTop = box.offsetTop
+            // 获取遮罩层一半的大小 
+            var shadeWidth = shade.clientWidth/2
+            var shadeHeight = shade.clientHeight/2
+            var left = x  - boxLeft  - shadeWidth
+            var top = y - boxTop - shadeHeight
+            console.log(left,top)
+            // 限制区域
+            if(left<=0){
+                left=0
+            }
+            if(top<=0){
+                top=0
+            }
+            var maxL = box.clientWidth - shade.clientWidth
+            var maxT = box.clientHeight - shade.clientHeight
+            if(left>=maxL){
+                left = maxL
+            }
+            if(top>=maxT){
+                top = maxT
+            }
+            shade.style.left = left + 'px'
+            shade.style.top = top + 'px'
+        }
+    }
+    // box.onmouseout = function(){
+    //     shade.style.display = 'none'
+    // }
+</script>

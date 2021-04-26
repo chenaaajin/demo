@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  1.单词不要写错，括号中的内容需要注意  -   while和for括号内不一样
+    //  2.while和do while的区别
+    //  3.while和for的区别 
+    //      -   while习惯在不知道循环多少次的时候使用
+    //      -   for习惯在提前知道循环多少次的时候使用
+    //  4.嵌套循环的时候，外面的循环变量和里面的循环变量的名称不要重名
+    //  5.防止死循环
+
+    for(var i=1;i<=5;i++){
+        document.write(i)
+    }
+    //  输出5~1
+    for(var i=5;i>=1;i--){
+        document.write(i)
+    }
+
+    //案例：输出1~10以内的偶数
+    for(var i=1;i<=10;i++){
+        if(i%2==0){
+            console.log(i)
+        }
+    }
+    //简化代码
+    for(var i=2;i<=10;i+=2){
+        console.log(i)
+    }
+</script>

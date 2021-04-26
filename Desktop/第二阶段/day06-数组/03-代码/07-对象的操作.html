@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 对象的操作
+    /*
+        增
+        删
+        改
+        查 - 查询对象中的数据 - 访问遍历对象
+    */
+    // 文件夹操作：新建、删除、剪切、复制、创建
+    
+    var obj = {
+        name:'张三',
+        age:18,
+        gender:'男',
+    }
+    // 增
+    obj.wife = {
+        name:'翠花',
+        age:18,
+        gender:'女'
+    }
+    console.log(obj)
+    obj.wife.age = 19;
+
+    // 改
+    obj.age = 19;
+    console.log(obj) // 如果对象中没有这个属性就是增，有的话就是修改
+
+    // 删
+    // delete 对象.属性名
+    delete obj.wife;
+    console.log(obj)
+
+    console.log(obj.brother) // 如果访问一个对象中不存在的属性，访问的值是undefined
+</script>

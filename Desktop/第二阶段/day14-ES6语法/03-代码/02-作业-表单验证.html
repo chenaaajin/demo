@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <table>
+            <tr>
+                <td>姓名: </td>
+                <td><input type="text" name="username"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>密码: </td>
+                <td><input type="password" name="password"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>确认密码: </td>
+                <td><input type="password" name="repassword"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>手机号码: </td>
+                <td><input type="number" name="tel"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>邮箱: </td>
+                <td><input type="emial" name="email"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><input type="submit"><input type="reset"></td>
+            </tr>
+        </table>
+    </center>
+</body>
+</html>
+<script>
+    // 需求:每当文本框失去焦点的时候,就要得到验证的结果，将结果放到每一行的最后一个td中
+    // 验证成功输出成功，显示绿色、失败的话就显示红色并输出失败原因
+    // 用户名只能是字母开头，由数字和字母组成，6~12位
+    // 密码 6~16位，字母数字下划线
+
+    // 用户名只能是字母开头，由数字和字母组成，6~12位
+    var username = document.querySelector("input[name='username']")
+    username.onblur = function(){
+        // 共有的设置
+        var tip = this.parentElement.nextElementSibling;
+        tip.style.fontSize = "12px"
+        tip.style.color = "red"
+        // 设置用户失焦事件后的是否为空
+        if(this.value==""){
+            tip.innerText = '当前用户名不能为空'
+            return false // 如果用户名为空，这里就停止不继续执行
+        }
+        // 验证当前姓名长度
+        if(this.value.length<6||this.value.length>12){
+            tip.innerText = '长度应该在6~12位'
+            return false
+        }
+        // 验证规则
+        var reg = /^[a-zA-Z][0-9a-zA-Z]{5,11}$/
+        if(!reg.test(this.value)){
+            tip.innerText = '规则不对啦'
+            return false
+        }
+        // 如果三个条件都能执行成功，说明没有执行return
+        // 下面就可以用成功表示
+        tip.innerText = '成功'
+        tip.style.color = 'green'
+    }
+    // 每次提示不正确的,这提示文本还是存在的，所以加个鼠标获取焦点事件
+    username.onfocus = function(){
+        this.parentElement.nextElementSibling.innerText = ''
+    }
+
+    // 密码 6~16位，字母数字下划线
+    var password = document.querySelector("input[name='password']")
+    password.onblur = function(){
+        // 共有的设置
+        var tip = this.parentElement.nextElementSibling;
+        tip.style.fontSize = "12px"
+        tip.style.color = "red"
+        // 设置用户失焦事件后的是否为空
+        if(this.value==""){
+            tip.innerText = '当前密码不能为空'
+            return false // 如果密码为空，这里就停止不继续执行
+        }
+        // 验证当前密码长度
+        if(this.value.length<6||this.value.length>16){
+            tip.innerText = '密码长度应该在6~12位'
+            return false
+        }
+        // 验证规则
+        var reg = /^\w{6,16}$/
+        if(!reg.test(this.value)){
+            tip.innerText = '规则不对啦'
+            return false
+        }
+        tip.innerText = '成功'
+        tip.style.color = 'green'
+    }
+    password.onfocus = function(){
+        this.parentElement.nextElementSibling.innerText = ''
+    }
+    // 确认密码
+    // 密码 6~16位，字母数字下划线
+    var repassword = document.querySelector("input[name='repassword']")
+    repassword.onblur = function(){
+        // 共有的设置
+        var tip = this.parentElement.nextElementSibling;
+        tip.style.fontSize = "12px"
+        tip.style.color = "red"
+        // 设置用户失焦事件后的是否为空
+        if(this.value==""){
+            tip.innerText = '当前密码不能为空'
+            return false // 如果密码为空，这里就停止不继续执行
+        }
+        // 验证当前密码长度
+        if(this.value.length<6||this.value.length>16){
+            tip.innerText = '密码长度应该在6~12位'
+            return false
+        }
+        // 验证规则
+        var reg = /^\w{6,16}$/
+        if(!reg.test(this.value)){
+            tip.innerText = '规则不对啦'
+            return false
+        }
+        // 确认是否一样
+        if(this.value!=password.value){
+            console.log(this.value,password.value)
+            tip.innerText='两次密码不一样'
+            return false
+        }
+        tip.innerText = '成功'
+        tip.style.color = 'green'
+    }
+    repassword.onfocus = function(){
+        this.parentElement.nextElementSibling.innerText = ''
+    }
+    // 未完成...
+</script>

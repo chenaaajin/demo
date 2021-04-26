@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    //  需求：开发一个金融软件，钱怎么存取，怎么访问？
+    //  思路：存取 - 变量就可以存储数据
+    // var money = 100; // 存钱
+    // console.log(money); // 查看余额
+    // money -= 10; // 取钱
+    // money += 10; // 存钱
+    // 全局中的变量是不安全的 - 容易被覆盖、攻击
+    // 应该将钱作为一个局部变量保护起来 - 全局不能访问局部变量的
+
+    // function fn(){
+    //     var money = 100;
+    //     return money;
+    // }
+    // // 如何访问
+    // var money = fn();
+    // console.log(money); // 100
+    // // 存取钱的操作
+    // money -= 10;
+    // console.log(money) // 90
+    // // 重新声明一个变量接收
+    // var money1 = fn();
+    // console.log(money1) // 100,操作的这个money是全局变量，不是函数中的局部变量重新访问还是原来的钱
+
+    // 全局没办法访问局部变量
+    // 局部的变量，只有在局部或者局部的局部中才能访问到
+    // function fn(){
+    //     var money = 100;
+    //     function fn1(yuE,jinE){
+    //         if(yuE=="存"){
+    //             money += jinE
+    //         }else if(yuE=="取"){
+    //             money-= jinE;
+    //         }
+    //         return money;
+    //     }
+    //     return fn1();
+    // }
+    // var money = fn();
+    // console.log(money)
+    // 做存取操作 - 无法存了，存入需要传入参数 - 参数无法传入局部的局部(无法访问局部函数)
+
+    function fn() {
+        var money = 100;
+        function fn1(yuE, jinE) {
+            if (yuE == "存") {
+                money += jinE
+            } else if (yuE == "取") {
+                money -= jinE;
+            }
+            return money;
+        }
+        return fn1;
+    }
+    var money1 = fn();
+    console.log(money1) // 函数体 
+    // 访问
+    var money2 = money1();
+    console.log(money2)
+    // 存
+    var money3 = money1("存",20)
+    console.log(money3)
+    // 再访问
+    var money4 = money1();
+    console.log(money4)
+    // 取
+    var money5 = money1("取",30)
+    console.log(money5)
+
+    // 闭包：大函数嵌套返回小函数，小函数使用了大函数的变量，在全局中能直接访问到小函数就形成了闭包
+    // 官方解释：闭包是作用域的产物
+</script>

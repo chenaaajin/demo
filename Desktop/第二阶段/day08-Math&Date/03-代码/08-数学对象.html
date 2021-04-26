@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<!-- 
+    Math:数学对象 - 处理数学对象和数字类
+        - Math.PI() 圆周率
+        - Math.abs() 绝对值
+        - Math.max(1,2,3,4,5) 最大值
+        - Math.min(1,2,3,4,5) 最小值
+        - Math.random() 随机数 0-1 小数
+        - Math.ceil()  向上取整
+        - Math.floor() 向下取整
+        - Math.round() 四舍五入
+ -->
+ <script>
+     // 取20~80之间的随机数
+     var res =parseInt((Math.random()*81)+20);
+     console.log(res)
+
+    // 范围内的随机数
+    function getRandom(a,b){
+        var max = Math.max(a,b)
+        var min = Math.min(a,b)
+        return  parseInt(Math.random()*(max-min))+  min + 1 // 是否+1取决需求是否包含这个最大值
+    }
+    var res = getRandom(100,20)
+    console.log(res)
+ </script>

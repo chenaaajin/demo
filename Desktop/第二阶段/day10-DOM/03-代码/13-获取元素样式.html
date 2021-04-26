@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div style="width:100px;height:100px;"></div>
+</body>
+</html>
+<script>
+    // 获取元素样式 
+    var div  = document.querySelector('div')
+    // var width  =  parseInt(div.style.width) +  50
+    // div.style.width = width + 'px'
+    
+    // 如果当前样式用内部或者外部样式表就获取不到
+    // window.getComputedStyle
+    var res = window.getComputedStyle(div)
+    console.log(res.width) // 三种样式表都可以获取
+
+    // 有兼容问题，获取querySlector也有兼容问题
+    // 兼容写法
+    var res;
+    var div  = document.getElementsByTagName('div')[0]
+    // 如果访问一个对象中不存在的属性  - underfined
+    if(window.getComputedStyle){ // 会发生隐形转换
+        res = window.getComputedStyle(div)
+    }else{
+        res = div.currentStyle
+    }
+    console.log(res)
+
+    // 可以封装成一个函数 
+    function getStyle(ele,attr){
+        if(window.getComputedStyle){ 
+            return window.getComputedStyle(ele)[div]
+        }else{
+            return div.currentStyle[attr]
+        }
+    }
+    var div  = document.getElementsByTagName('div')[0]
+    var width  = getStyle(div,'width')
+    console.log(width)
+</script>

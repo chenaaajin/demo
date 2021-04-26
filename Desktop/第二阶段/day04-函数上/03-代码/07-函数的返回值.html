@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  流水线第一道工序完成后的产品，再交给第二道工序去处理
+    //  函数 - 直接将数据显示在浏览器上
+    //  需求：计算三个数的和 - 再计算平均值
+    //  计算三个数的和
+    function add(a,b,c){
+        var sum =  a + b + c;
+        // console.log(sum) 
+        //这是第一个工序输出，不应该显示在页面中，需要再传给下面的函数继续使用 - return 返回
+        //用法：return 返回值
+        return sum;
+        // 已经返回了，但是不会显示在页面中，需要用一个变量接收
+    }
+    //  计算平均值
+    function avg(sum){
+        var result = sum/3;
+        console.log(result)
+    }
+    // 变量接收
+    var num = add(3,7,5)  //  第一道工序输出的值
+    console.log(num)
+    avg(num);// 第二道工序输出的值
+
+    //函数返回值总结：
+    /*
+        语法：
+            - 在函数中，使用return关键字后面跟需要返回的数据就ok
+            - return除了能将结果返回，另一个作用就是结束函数中代码的执行，加了return下面的代码不执行了
+            - 如果函数中没有return，这个函数返回值就是undefined
+    */
+</script>

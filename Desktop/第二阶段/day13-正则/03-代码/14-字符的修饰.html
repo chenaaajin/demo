@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 提取位，对字符的修饰
+    // var reg = /\d{2}/      // {n}   - 表示这个字符要有n个
+    // var reg = /\d{2,3}/    // {n,m} - 表示这个字符最少有n个,最多有m个    
+    // var reg = /\d{2,}/     // {n,}  - 表示最少n位,最多不限制,大于n位都可以匹配到，匹配不到就null   
+    /*var str = 'adsa111'
+    var res = str.match(reg)
+    console.log(res)*/
+
+    // + 修饰字符的位数,至少一位,最多不限
+    // var reg = /\d+/    
+    // var str = 'adsa111'
+    // var res = str.match(reg)
+    // console.log(res)
+
+    // ? 最多一位 可有一位或者没有
+    // var reg = /\d?/    
+    // var str = '1adsa'
+    // var res = str.match(reg)
+    // console.log(res)
+
+    // * 所有位都可以
+    // var reg = /\d*/    
+    // var str = '212323adsa'
+    // var res = str.match(reg)
+    // console.log(res)
+
+    // 万能匹配 .*
+    var str = 'http://www.baidu.com'
+    var reg = /.*/
+    var res = str.match(reg)
+    console.log(res)
+</script>

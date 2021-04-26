@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // var now  =  +new Date();  // 加了+表示时间戳,转换类型,现在的时间戳
+    // 相当于下面时间戳操作
+    var now = new Date();
+    now = now.getTime(); // 现在的时间戳 是一个数字，不是对象
+    var date = new Date(now-100*60*60*24*1000);
+    var month = date.getMonth()  +  1;
+    var day  = date.getDate()
+    console.log('100天是'+month+'月'+day+'号')
+
+    // 什么时候是对象，什么时候是数字，什么时候是时间戳？
+
+    // 用new创建的数据都是对象
+    var date = new Date() // 显示的是字符串，原因是在显示的时候默认调用了一次toString方法
+    var date = +new Date() // 加了+号就是表示时间戳 ，相当于调用了时间对象中的getTime得到时间戳
+    // 如果两个时间戳进行计算，得到的毫秒数就是一个数字
+</script> 

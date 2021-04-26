@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 对象的方法
+    var obj = {
+        name:'张三',
+        age:12,
+        isMan:true,
+        wife:undefined,
+        borther:{
+            name:'李四',
+            age:11
+        },
+        eat:function(){
+            console.log('吃')
+        }
+        // 值是函数，这个键就叫做对象的方法
+    }
+    // 对象的值可以是任意的数据类型 - 6种 - 也可以是函数
+
+    // 如何让值、这个函数调用
+    console.log(obj)
+    console.log(obj.eat)
+    obj.eat();// 函数调用方式比较特殊，对象.方法名()
+    // 之前使用过类似 document.write() console.log()
+</script>

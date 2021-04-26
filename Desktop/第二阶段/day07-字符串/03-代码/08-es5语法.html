@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // es5 - ECMAscript BOM DOM
+    // 语言也会更新换代 - 现在使用的js版本，ECMAscript3 - es3
+    // es5 - ECMAscript5是目前公认兼容性最好的版本
+    // es5在原来的基础上，新增了一些语法
+
+    // es5语法
+    // 严格模式 - 代码要求比较高
+    /*  
+        使用严格模式的好处
+        1.消除js语法里不合理的地方 - js被人诟病的是js的作用域繁琐
+        2.增加运行速度 - 语法要求高了
+        3.js想成为最好的语言，就得升级，为后面的版本做铺垫
+    */
+
+    // 怎么写严格模式 - 在代码或者函数前面写 'use strict'
+    "use strict"
+    // 严格模式对代码的几个要求
+    // 1.不允许省略var关键字声明变量
+    // var a = 10;
+    // console.log(10)
+
+    // 2.不允许函数参数重名
+    // function fn(a,a){
+    //     console.log(a) // Duplicate parameter name not allowed in this context 参数重名错误
+    // }
+    // fn(1,2)
+
+    // 3.不允许函数中的this关键字指向全局
+    // window对象，window代表全局 - 一个变量能在window局中找到的时候，这个变量就是全局变量
+    // var a = 10;
+    // console.log(window) // 全局中定义的变量，就是window对象中的一个属性
+    // this是js中的一个关键字，在不同的地方代表的含义不一样
+    // 在普通函数中指向的是全局
+    function fn(){
+        console.log(this) // 严格模式下指向undefined
+    }
+    fn();
+</script>

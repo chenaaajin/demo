@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var arr = [1,2,3];
+    // 解构得到第一个值
+    var [a] = arr
+    console.log(a)
+    // 得到第二个值,从左到右，第一个值不要也得加上
+    var [a,b] = arr
+    console.log(b)
+    // 或者用_符号代替
+    var [_,_,c] = arr
+    console.log(c)
+
+    // 解构好在哪里
+    var a1 = 1
+    var a2 = 3
+    var [a1,a2] = [a2,a1]
+    console.log(a1,a2)
+</script>

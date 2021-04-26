@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <center id="box"></center>
+</body>
+</html>
+<script>
+    setInterval(
+        function(){
+            // 计算一个时间距离国庆还有多长时间
+            // 计算两个时间之间的时间戳
+            // 当前时间的时间戳
+            var now  =  +new Date()
+            // 国庆的时间戳
+            var china = +new Date('2020-9-01') 
+            // 注意在设置月份的时候,加0表示当前时区，不加0表示世界时间
+            // 时间戳的差
+            var diff = china - now;
+            // 通过毫秒数计算天、小时、分钟、秒
+            var day = parseInt(diff/24/60/60/1000)
+            var hour = parseInt(diff/60/60/1000)%24
+            var minute = parseInt(diff/1000/60)%60
+            var second= parseInt(diff/1000)%60
+            box.innerHTML=('距离2020年的九月一号还有'+day+'天'+hour+'时'+minute+'分'+second+'秒')
+        })
+</script>

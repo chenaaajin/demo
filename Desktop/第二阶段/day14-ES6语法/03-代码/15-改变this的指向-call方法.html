@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // call方法 函数.call(this想要代表的对象)
+    // 这里的call不仅可以调用函数，还可以将函数中的this作为第一个参数使用
+    function fn(a,b){
+        console.log(this)
+        console.log(a+b)
+    }
+    var obj = {
+        name:'zhangsan'
+    }
+    fn.call(obj) // 指向对象
+    fn() // 指向window
+
+    // call还可以传参数
+    fn.call(obj,1,2)
+</script>

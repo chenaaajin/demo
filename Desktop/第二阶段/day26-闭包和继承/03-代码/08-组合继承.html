@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    // 组合继承：原型继承+调用上下文继承 - 解决调用上下文继承的缺点
+    function Animal() {
+        this.eat = "能吃";
+        this.run = "能跑";
+    }
+    Animal.prototype.play = function () {
+        console.log("打闹")
+    }
+    function Dog() {
+        // 使用上下文调用模式
+        Animal.apply(this)
+        this.name = "狗";
+    }
+    // 使用原型继承
+    // Dog.prototype = new Animal();// 这里可以不用new Animal作为原型，只需要Animal上的方法，这个方法不在Animal上，在原型上，所以将Animal的原型作为自己的原型(有个前提是Animal没什么用了)
+    Dog.prototype = Animal.prototype;
+    var d = new Dog();
+    console.log(d)
+    d.play();
+    Dog.prototype.constructor = Dog; //最后原型还是得指回Dog
+</script>

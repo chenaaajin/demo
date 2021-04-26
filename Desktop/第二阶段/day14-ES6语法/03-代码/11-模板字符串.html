@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // es6中提供一种定义字符串的方法 - 模板字符串
+    var str = 
+    '<tr>'
+        +
+        '<td>'
+        +
+        '姓名'
+        +
+        '</td>'
+        +
+        '<td>'
+        +
+        '年龄'
+        +
+        '</td>'
+        +
+        '<td>'
+        +
+        '性别'
+        +
+        '</td>'
+        +
+    '</tr>'
+    console.log(str)
+    // 看不清，并且字符串是不允许换行写的，所以得用上面的方式进行拼接
+
+    // es6模板字符串的用法 - 反引号``
+    var str1 = 
+    `
+        <tr>
+            <td>姓名</td>
+            <td>性别</td>
+            <td>年龄</td>
+        </tr>
+    `
+    console.log(str1)
+    // 模板字符串的好处
+    /*
+        1.格式不约束，可以换行写
+        2.不用再写字符串拼接，可以解析变量 - ${变量名}
+    */ 
+    var name = '张三'
+    var age = 12
+    var str2 = `
+        <tr>
+            <td>${name}</td>
+            <td>${age}</td>
+        </tr>
+    `
+    console.log(str2)
+</script>

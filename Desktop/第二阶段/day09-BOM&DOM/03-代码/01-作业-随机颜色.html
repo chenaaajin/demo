@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body,
+        html {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body id="box">
+    <!-- <div style="height: 100px;" id="box"></div>
+    <p style="height: 100px;" id="p"></p>
+    <h1 id="h" style="height: 100px;"></h1> -->
+</body>
+
+</html>
+<script>
+    // 编写一个函数，获取一个十六进制随机颜色字符串
+    // 十六进制由0~9 a~f组成，大小写是忽略的
+    setInterval(function () {
+        var str = '0123456789abcdef'
+        var res = '#'
+        for (var i = 0; i < 6; i++) {
+            var index = parseInt(Math.random() * str.length)
+            res += str[index]
+        }
+        console.log(res)
+        box.style.background = res
+    },100)
+
+    // 十六进制方式 rgb
+    // var r = parseInt(Math.random()*256) // 0~255之间 
+    // r = r.toString(16)
+    // if(r.length=='1'){r+='0'}
+    // var g = parseInt(Math.random()*256) // 0~255之间 
+    // g = g.toString(16)
+    // if(g.length=='1'){g+='0'}
+    // var b = parseInt(Math.random()*256) // 0~255之间 
+    // b = b.toString(16)
+    // if(b.length=='1'){b+='0'}
+    // var rgb  = '#' +  r  + g + b;
+    // console.log(rgb)
+    // p.style.background  = rgb;
+    // 有时候获取到15以内的数字,需要转换成十六进制,颜色值值只有五位,就不能用 
+    // 所有需要做判断,少一位就加个0
+    // 比较麻烦，优化一下
+
+    function getColor() {
+        var res = "#"
+        for (var i = 0; i < 3; i++) {
+            var color = parseInt(Math.random() * 256).toString(16)
+            if (color.length == 1) {
+                color = color + 0; // 可以不加引号,隐式转换
+            }
+            res += color
+            // console.log(res)
+        }
+        return res
+    }
+    h.style.background = getColor();
+</script>

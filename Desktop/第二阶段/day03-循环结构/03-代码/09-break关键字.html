@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <input type="text" id="inp"> -->
+</body>
+</html>
+<script>
+    //1~10到4的时候停下来
+    for(var i=1;i<=10;i++){
+        document.write(i+"<br>")
+        if(i==4){
+            //停止
+            break; // 就是为了停止循环的
+        }
+    }
+    
+    //死循环也可以break
+    var i =1;
+    while(true){
+        document.write(i)
+        if(i==3){
+            break;
+        }
+        i++
+    }
+
+    // var $input = document.getElementById("inp")
+    // $input.onblur = function(){
+    //     console.log($input.value)
+    // }
+</script>

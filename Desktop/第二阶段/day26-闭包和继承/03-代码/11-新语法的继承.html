@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // es6中有一种语法，可以用来继承
+    /*
+        类 extends 父类{
+
+        }
+    */
+    class Animal{ // 父类
+        constructor(){
+            this.eat = "能吃"
+            this.run = "能跑"
+        }
+    }
+    class Rubbit extends Animal{ // 子类
+        constructor(){
+            // 报错：Uncaught ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+            // 如果父类有constructor，子类里面必须调用super方法
+            super();
+            this.foot = "4条"
+        }
+        play(){
+            console.log("打闹")
+        }
+    }
+    var r = new Rubbit()
+    console.log(r)
+
+    // 子类的extends关键字并不能执行父类的condtructor，而是子类的super在执行constructor
+    // 如果需要传参数，先是实参 - 子类 - 子类super - 父类 (传参如下代码)
+    // class Animal{ // 父类
+    //     constructor(name){
+    //         this.eat = "能吃"
+    //         this.run = "能跑"
+    //         this.name = name
+    //     }
+    // }
+    // class Rubbit extends Animal{ // 子类
+    //     constructor(name){
+    //         super(name);
+    //         this.foot = "4条"
+    //     }
+    //     play(){
+    //         console.log("打闹")
+    //     }
+    // }
+    // var r = new Rubbit("兔子")
+    // console.log(r)
+
+</script>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // 求数组中的最大值
+    var arr = [1,4,6,9,2,4,5]
+    // 前两个数字进行比较大小，大的和剩下的比较，谁大就用谁比较
+    var max = arr[0] // 假设第一个值是最大的
+    var length = arr.length;
+    for(var i=1;i<length;i++){
+        if(max<arr[i]){
+            max = arr[i]
+        }
+    }
+    console.log(max)
+</script>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  比较运算：> < >= <= 相等(==、===) 不相等
+
+    //  >
+    var a = 10;
+    var a1 = 9;
+    var a2 = a > a1;
+    console.log(a2) 
+    //  比较运算最终得出来的结果都是布尔值
+
+    //  ==
+    var b = 1;
+    var b1 = 2;
+    var b2 = b == b1
+    console.log(b2)
+
+    var c = 1;
+    var c1 = "1";
+    var c2 = c == c1;// 比较两个容器里面的值是否一样
+    console.log(c2)
+
+    //  ===
+    var d = 1;
+    var d1 = "1";
+    var d2 = d === d1;// 先比较类型是否相等，相等在判断值是否相等，否则false
+    console.log(d2)
+
+    //  !=  !==
+    var e = 1;
+    var e1 = '1';
+    var e2 = e != e1;
+    console.log(e2) //false
+    var e3 = e !== e1;
+    console.log(e3) //true
+</script>

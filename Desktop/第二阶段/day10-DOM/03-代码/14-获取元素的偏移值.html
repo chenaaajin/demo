@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 100px 0 0 100px;
+            position: relative;
+            left: 100px;
+            top: 100px;
+            transform: translate(100px,100px)
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>
+<script>
+    // 偏移值 - 获取间距
+    var box =  document.querySelector('div')
+    console.log(box.offsetLeft,box.offsetTop)
+</script>

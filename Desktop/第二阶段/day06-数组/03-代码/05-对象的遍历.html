@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //  var person = {
+    //     name:'张三',
+    //     age:12,
+    //     gender:'男'
+    // }
+    // 访问对象中的每一个值
+    // console.log(person.name)
+    // console.log(person.age)
+    // console.log(person.gender)
+    // 将对象中的值都访问一遍 - 遍历
+    // js提供一个语法来遍历对象
+    /*
+        for(var 变量 in 对象){
+            变量 - 就是对象里面的每一个键
+        }
+    */
+    // for(var i in person){
+    //     console.log(i)
+    //     console.log(person[i])
+    // }
+
+    //为什么console.log(person[i])不用加引号
+    var obj = {
+        name:'张三',
+        age:12
+    }
+    obj.name/obj['name']
+    var a = 'name'
+    obj.name // 能访问，是因为对象中有一个键叫做name
+    obj.a    // 不能访问，因为对象中没有一个键叫做a，a只是一个变量
+    //  .后面必须是一个字符串，不能是变量
+
+    // 如果希望使用一个变量来访问，必须使用中括号的方式
+    obj[a]  // a是一个变量，加了引号就变成了字符串
+</script>

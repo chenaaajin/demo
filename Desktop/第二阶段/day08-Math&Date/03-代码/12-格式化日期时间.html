@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var date = new Date()
+    console.log(date) // 输出的时间日期不符合中国人的时间习惯,需要转换成年月日时分秒
+    // 转换年月日
+    console.log(date.toLocaleDateString())
+    // 转换时分秒
+    console.log(date.toLocaleTimeString())
+    // 转换年月日时分秒
+    console.log(date.toLocaleString())
+</script>
